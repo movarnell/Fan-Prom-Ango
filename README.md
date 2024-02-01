@@ -1,5 +1,5 @@
 # Fan-Prom-Ango 🎉
-
+## NOTICE: You must be a Promineo Tech Student to be made a Collaborator on this project. 
 Welcome to **Fan-Prom-Ango**! We're thrilled to have you as a potential contributor to our collaborative project. If you'd like to join the team, please follow the steps below:
 
 ## Contact Us on Slack 🚀
