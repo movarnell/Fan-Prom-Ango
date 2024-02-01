@@ -1,0 +1,15 @@
+[
+  {
+    "seatDescription": "A1",
+    "seatAvailable": true,
+    "seatPrice": 5,
+    "disabled": false,
+    "id": "1"
+  },
+  {
+    "seatDescription": "A2",
+    "seatAvailable": true,
+    "seatPrice": 5,
+    "disabled": false,
+    "id": "2"
+  },
