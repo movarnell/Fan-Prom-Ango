@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Fan-Prom-Ango
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Fan-Prom-Ango! We're excited to have you as a potential contributor to our collaborative project. If you'd like to join the team, please follow the steps below:
 
-## Available Scripts
+## Contact Us on Slack
 
-In the project directory, you can run:
+We encourage you to reach out to us on Slack if you're interested in contributing. Feel free to ask questions, share your ideas, or introduce yourself. We have a friendly and supportive community ready to help you get started. Here's how to join our Slack channel:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Message Michael Varnell or Matthew Cox on Slack with your github email. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Working on Issues
+Fan-Prom-Ango uses issues to track and manage tasks, bug fixes, and new features. If you'd like to work on a specific issue, please follow these steps:
 
-### `npm test`
+### Each issue should have a branch already created for it, that is where you will do your work.
+To get to you issues branch after cloning the project down: 
+1. Access the Source Control Panel: In the left sidebar of Visual Studio Code, you'll find the Source Control icon. It looks like a square with a branch symbol or it may be labeled as "Git" if you're using Git for version control. Click on this icon to open the Source Control panel.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. View Available Branches: In the Source Control panel, you'll see a list of available branches. If your desired branch already exists locally, you can simply click on it to switch to that branch. If it doesn't exist yet, you'll need to fetch it from the remote repository.
 
-### `npm run build`
+3. Fetch the Desired Branch: To fetch a branch that doesn't exist locally, click on the three dots (ellipsis) at the top of the Source Control panel, and then select "Pull, Fetch from...". Choose the remote repository where the branch resides (usually origin) and select the desired branch from the list. Click "OK" to fetch the branch.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Checkout the Branch: Once the branch is fetched, you can click on it in the Source Control panel to select it. You'll see an option to "Checkout" or "Switch to" the branch. Click this option, and Visual Studio Code will switch your workspace to the selected branch.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## What is a Pull Request (PR)?
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A Pull Request (PR) is a fundamental concept in collaborative software development. It allows you to propose changes or additions to a project's codebase, documentation, or any other files. Pull Requests serve as a way to request that your modifications be reviewed and merged into the main project. They facilitate discussion, feedback, and collaboration among contributors.
 
-### `npm run eject`
+## How to Create a Pull Request (PR)
+#### After being made a contributor!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Clone the Repository**: Clone the forked repository to your local machine using `git clone`. This will create a local copy of the project on your computer.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Create a New Branch or checkout to issue branch**: Before making changes, create a new branch for your feature or bug fix. Use a descriptive and relevant branch name, such as `feature/my-new-feature` or `bugfix/fix-issue-123`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    ```bash
+    git checkout -b your-branch-name
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. **Make Your Changes**: Write your code, documentation, or any necessary updates. Commit your changes with meaningful commit messages.
 
-## Learn More
+    ```bash
+    git commit -m "Description of your changes"
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. **Push Your Code Up**: Push your branch up to the repository on GitHub.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+6. **Create the Pull Request**: Go to the original project's repository on GitHub. You should see a notification that a branch was recently pushed. Click on the "Compare & pull request" button.
 
-### Code Splitting
+7. **Review and Submit**: Describe your changes in the pull request, referencing any related issues if applicable. Reviewers will examine your code, provide feedback, and discuss any necessary improvements.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+8. **Address Feedback**: If there are suggested changes, make them in your local branch, commit, and push again. The pull request will automatically update.
 
-### Analyzing the Bundle Size
+9. **Merge the Pull Request**: Once your changes are approved, a project maintainer will merge your pull request into the main project. Congratulations! Your contributions are now part of the project. You are now offically an open source contributor!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Pull Requests are essential for maintaining code quality and collaboration within open-source and team projects. They provide a structured way to propose, review, and merge code changes while allowing for discussion and feedback.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## If you have problems
+Reach out to either Michael or Matthew if you are having issues. 
