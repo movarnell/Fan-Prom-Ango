@@ -3,6 +3,8 @@ import Header from "./Components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./Components/Navigation";
 import { useEffect, useState } from "react";
+import Seat from "./Components/Seat";
+// import { Row } from "react-bootstrap";
 
 function App() {
   const [seats, setSeats] = useState([]);
@@ -19,21 +21,14 @@ function App() {
     setSeats(data);
   };
 
+  
+
   return (
     <div className='container-fluid bg-dark'>
       <Navigation />
       <Header />
       <div className='container'>
-        <div className='row'>
-          {seats.map((seat) => (
-            <div className='col-4 border border-1 m-1 text-white' key={seat.id}>
-              <p>Seat Number:{seat.seatDescription}</p>
-              <p>Available: {seat.seatAvailable ? "Yes": "Sold"}</p>
-              <p>Price: ${seat.seatPrice}</p>
-              <p>{seat.disabled ? "Disabled": ""}</p>
-            </div>
-          ))}
-        </div>
+       <Seat seats={seats} />
       </div>
     </div>
   );

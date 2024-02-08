@@ -2,14 +2,141 @@
   {
     "seatDescription": "A1",
     "seatAvailable": true,
-    "seatPrice": 5,
+    "seatPrice": 5.99,
     "disabled": false,
     "id": "1"
   },
   {
     "seatDescription": "A2",
     "seatAvailable": true,
-    "seatPrice": 5,
+    "seatPrice": 5.99,
     "disabled": false,
     "id": "2"
   },
+  {
+    "seatDescription": "A3",
+    "seatAvailable": true,
+    "seatPrice": 5.99,
+    "disabled": false,
+    "id": "3"
+  },
+  {
+    "seatDescription": "A4",
+    "seatAvailable": true,
+    "seatPrice": 5.99,
+    "disabled": false,
+    "id": "4"
+  },
+  {
+    "seatDescription": "A5",
+    "seatAvailable": true,
+    "seatPrice": 5.99,
+    "disabled": false,
+    "id": "5"
+  },
+  {
+    "seatDescription": "B1",
+    "seatAvailable": true,
+    "seatPrice": 5.99,
+    "disabled": false,
+    "id": "6"
+  },
+  {
+    "seatDescription": "B2",
+    "seatAvailable": true,
+    "seatPrice": 5.99,
+    "disabled": false,
+    "id": "7"
+  },
+  {
+    "seatDescription": "B3",
+    "seatAvailable": true,
+    "seatPrice": 5.99,
+    "disabled": false,
+    "id": "8"
+  },
+  {
+    "seatDescription": "B4",
+    "seatAvailable": true,
+    "seatPrice": 5.99,
+    "disabled": false,
+    "id": "9"
+  },
+  {
+    "seatDescription": "B5",
+    "seatAvailable": true,
+    "seatPrice": 5.99,
+    "disabled": false,
+    "id": "10"
+  },
+  {
+    "seatDescription": "C1",
+    "seatAvailable": true,
+    "seatPrice": 5.99,
+    "disabled": false,
+    "id": "11"
+  },
+  {
+    "seatDescription": "C2",
+    "seatAvailable": true,
+    "seatPrice": 5.99,
+    "disabled": false,
+    "id": "12"
+  },
+  {
+    "seatDescription": "C3",
+    "seatAvailable": true,
+    "seatPrice": 5.99,
+    "disabled": false,
+    "id": "13"
+  },
+  {
+    "seatDescription": "C4",
+    "seatAvailable": true,
+    "seatPrice": 5.99,
+    "disabled": false,
+    "id": "14"
+  },
+  {
+    "seatDescription": "C5",
+    "seatAvailable": true,
+    "seatPrice": 5.99,
+    "disabled": false,
+    "id": "15"
+  },
+  {
+    "seatDescription": "D1",
+    "seatAvailable": true,
+    "seatPrice": 5.99,
+    "disabled": false,
+    "id": "16"
+  },
+  {
+    "seatDescription": "D2",
+    "seatAvailable": true,
+    "seatPrice": 5.99,
+    "disabled": false,
+    "id": "17"
+  },
+  {
+    "seatDescription": "D3",
+    "seatAvailable": true,
+    "seatPrice": 5.99,
+    "disabled": false,
+    "id": "18"
+  },
+  {
+    "seatDescription": "D4",
+    "seatAvailable": true,
+    "seatPrice": 5.99,
+    "disabled": false,
+    "id": "19"
+  },
+  {
+    "seatDescription": "D5",
+    "seatAvailable": true,
+    "seatPrice": 5.99,
+    "disabled": false,
+    "id": "20"
+  }
+]
