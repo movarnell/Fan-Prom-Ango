@@ -21,7 +21,7 @@ function Seat({seats, setSeats , updateSeats, cart, setCart}) {
       }
       setCart([...cart, seat]);
      //update seat in state to show new status
-     setSeats([...seats, seat])
+     setSeats([...seats])
     ;
 
         console.log(seat, "This was sent to updateSeats")
@@ -57,7 +57,7 @@ function Seat({seats, setSeats , updateSeats, cart, setCart}) {
       <div className='row'>
         <h2 className='text-light'>Row A</h2>
         {rowA.map((seat) => (
-          <div
+          <div key={seat.id}
             className={
               seat.seatAvailable
                 ? seat.seatAvailable && seat.disabled
@@ -74,7 +74,7 @@ function Seat({seats, setSeats , updateSeats, cart, setCart}) {
       <div className='row'>
         <h2 className='text-light'>Row B</h2>
         {rowB.map((seat) => (
-          <div
+          <div key={seat.id}
             className={
               seat.seatAvailable
                 ? seat.seatAvailable && seat.disabled
@@ -91,7 +91,7 @@ function Seat({seats, setSeats , updateSeats, cart, setCart}) {
       <div className='row'>
         <h2 className='text-light'>Row C</h2>
         {rowC.map((seat) => (
-          <div
+          <div key={seat.id}
             className={
               seat.seatAvailable
                 ? seat.seatAvailable && seat.disabled
@@ -108,7 +108,7 @@ function Seat({seats, setSeats , updateSeats, cart, setCart}) {
       <div className='row'>
         <h2 className='text-light'>Row D</h2>
         {rowD.map((seat) => (
-          <div
+          <div key={seat.id}
             className={
               seat.seatAvailable
                 ? seat.seatAvailable && seat.disabled
