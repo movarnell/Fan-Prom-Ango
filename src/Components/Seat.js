@@ -20,8 +20,8 @@ function Seat({seats, setSeats , updateSeats, cart, setCart}) {
         seat.seatAvailable = true;
       }
       setCart([...cart, seat]);
-     //update seat in state to show new status
-     setSeats([...seats])
+     //update seat in state to show new status    
+     setSeats([...seats, seat])
     ;
 
         console.log(seat, "This was sent to updateSeats")
