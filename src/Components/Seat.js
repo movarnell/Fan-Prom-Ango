@@ -1,6 +1,6 @@
 import { Col, Button, Row } from 'react-bootstrap';
 
-function Seat({seats, setSeats , updateSeats, cart, setCart}) {
+function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
   // NOTE The following code is used to filter the seats into rows. We have used the filter method to filter the seats
     let rowA = seats.filter(seat => seat.id < 6);
     let rowB = seats.filter(seat => seat.id > 5 && seat.id < 11);
@@ -20,9 +20,9 @@ function Seat({seats, setSeats , updateSeats, cart, setCart}) {
         seat.seatAvailable = true;
       }
       setCart([...cart, seat]);
-     //update seat in state to show new status    
-     setSeats([...seats, seat])
-    ;
+     //update seat in state to show new status   
+     setSeats([...seats]);
+    updateSeats(seat);
 
         console.log(seat, "This was sent to updateSeats")
       }
@@ -49,15 +49,22 @@ function Seat({seats, setSeats , updateSeats, cart, setCart}) {
     <Col className='align-items-center justify-items-center'>
       <Row>
         {cart.length > 0 && <p>You have selected the following seats</p>}
-        {cart && cart.forEach((seat) => (
-          <div className='text-light'>{seat.seatDescription}</div>
-        ))}
-      <Button onClick={(e) => finalPurchase(e)} className='btn btn-success m-2'>Ready to Purchase</Button>
+        {cart &&
+          cart.forEach((seat) => (
+            <div className='text-light'>{seat.seatDescription}</div>
+          ))}
+        <Button
+          onClick={(e) => finalPurchase(e)}
+          className='btn btn-success m-2'
+        >
+          Ready to Purchase
+        </Button>
       </Row>
       <div className='row'>
         <h2 className='text-light'>Row A</h2>
         {rowA.map((seat) => (
-          <div key={seat.id}
+          <div
+            key={seat.id}
             className={
               seat.seatAvailable
                 ? seat.seatAvailable && seat.disabled
@@ -74,7 +81,8 @@ function Seat({seats, setSeats , updateSeats, cart, setCart}) {
       <div className='row'>
         <h2 className='text-light'>Row B</h2>
         {rowB.map((seat) => (
-          <div key={seat.id}
+          <div
+            key={seat.id}
             className={
               seat.seatAvailable
                 ? seat.seatAvailable && seat.disabled
@@ -91,7 +99,8 @@ function Seat({seats, setSeats , updateSeats, cart, setCart}) {
       <div className='row'>
         <h2 className='text-light'>Row C</h2>
         {rowC.map((seat) => (
-          <div key={seat.id}
+          <div
+            key={seat.id}
             className={
               seat.seatAvailable
                 ? seat.seatAvailable && seat.disabled
@@ -108,7 +117,8 @@ function Seat({seats, setSeats , updateSeats, cart, setCart}) {
       <div className='row'>
         <h2 className='text-light'>Row D</h2>
         {rowD.map((seat) => (
-          <div key={seat.id}
+          <div
+            key={seat.id}
             className={
               seat.seatAvailable
                 ? seat.seatAvailable && seat.disabled
