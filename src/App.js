@@ -12,8 +12,7 @@ function App() {
   const [cart, setCart] = useState([]);
   const [isLoading, setIsLoading] = useState(false)
   const URL = "https://65bc1cf852189914b5bd9bf1.mockapi.io/seats/";
-console.log(isLoading)
- //FIXME is not loading. 
+
 
   useEffect(() => {
     setIsLoading(true);
@@ -30,6 +29,7 @@ console.log(isLoading)
   };
 
   const updateSeats = async (seat) => {
+    setIsLoading(true);
     console.log("Update Seats Ran")
     const response = await fetch(`${URL}/${seat.id}`, {
       method: "PUT",
@@ -48,6 +48,7 @@ console.log(isLoading)
       setTotalSales(totalSales - seat.seatPrice);
       console.log("seat set to true")
     }
+    setIsLoading(false);
   };
 console.log(seats);
   return (
@@ -56,18 +57,7 @@ console.log(seats);
       <Header />
       
       <div className='container'>
-        <h2 className='text-light'>Total: ${totalSales.toFixed(2)}</h2>
-      <h3 className='text-light'>
-        {cart &&
-          cart.map(
-            (ticket) =>
-              `${
-                ticket.disabled
-                  ? ticket.seatDescription + " (Disabled Seat) "
-                  : ticket.seatDescription
-              } `
-          )}{" "}
-      </h3>
+        
         
           <Seat
             seats={seats}

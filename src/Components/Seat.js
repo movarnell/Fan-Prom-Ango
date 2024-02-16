@@ -55,11 +55,21 @@ function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
   return (
     <Col className='align-items-center justify-items-center'>
       <Row>
-        {cart.length > 0 && <p>You have selected the following seats</p>}
+      <h2 className='text-light'>Total: ${cart.reduce((acc, seat) => acc + seat.seatPrice, 0)}</h2>
+      <hr style={{color:'#fff'}}/>
+      {cart.length > 0 && <h4 className='text-light'>You have selected the following seats:</h4>} {cart.length === 0 && <h4 className='text-light'>Please select a seat</h4>}
+      <h4 className='text-light'>
         {cart &&
-          cart.forEach((seat) => (
-            <div className='text-light'>{seat.seatDescription}</div>
-          ))}
+          cart.map(
+            (ticket) =>
+              `${
+                ticket.disabled
+                  ? ticket.seatDescription + " (Disabled Seat) "
+                  : ticket.seatDescription
+              } `
+          )}{" "}
+      </h4>
+        
         <Button
           onClick={(e) => finalPurchase(e)}
           className='btn btn-success m-2'
