@@ -40,3 +40,9 @@
     height: auto;
     padding-bottom: 4rem;
 }
+
+.header-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
