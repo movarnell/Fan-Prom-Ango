@@ -1,4 +1,5 @@
 import { Col, Button, Row } from 'react-bootstrap';
+import Loading from './Loading';
 
 function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
   // NOTE The following code is used to filter the seats into rows. We have used the filter method to filter the seats
@@ -62,7 +63,7 @@ function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
       </Row>
       <div className='row'>
         <h2 className='text-light'>Row A</h2>
-        {rowA.map((seat) => (
+        {isLoading ? <Loading/>:rowA.map((seat) => (
           <div
             key={seat.id}
             className={
@@ -80,7 +81,7 @@ function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
       </div>
       <div className='row'>
         <h2 className='text-light'>Row B</h2>
-        {rowB.map((seat) => (
+        {isLoading ? <Loading/>:rowB.map((seat) => (
           <div
             key={seat.id}
             className={
@@ -98,7 +99,7 @@ function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
       </div>
       <div className='row'>
         <h2 className='text-light'>Row C</h2>
-        {rowC.map((seat) => (
+        {isLoading ? <Loading/>:rowC.map((seat) => (
           <div
             key={seat.id}
             className={
@@ -116,7 +117,7 @@ function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
       </div>
       <div className='row'>
         <h2 className='text-light'>Row D</h2>
-        {rowD.map((seat) => (
+        {isLoading ? <Loading/>:rowD.map((seat) => (
           <div
             key={seat.id}
             className={

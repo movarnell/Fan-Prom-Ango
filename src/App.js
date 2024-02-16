@@ -54,8 +54,9 @@ console.log(seats);
     <div className='container-fluid bg-dark'>
       <Navigation />
       <Header />
-      <h2 className='text-light'>Total: ${totalSales.toFixed(2)}</h2>
-      {/* {isLoading === true ? (<h1>LOADING...</h1>):null} */}
+      
+      <div className='container'>
+        <h2 className='text-light'>Total: ${totalSales.toFixed(2)}</h2>
       <h3 className='text-light'>
         {cart &&
           cart.map(
@@ -67,8 +68,6 @@ console.log(seats);
               } `
           )}{" "}
       </h3>
-      <div className='container'>
-        
         
           <Seat
             seats={seats}
