@@ -15,12 +15,18 @@ function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
 
     const handleSeatClick = (e, seat) => {
       e.preventDefault();
+      //if - seat is available, add to cart and set seat to unavailable
+      //else - if seat is not available, remove from cart and set seat to available
       if(seat.seatAvailable){
+        setCart([...cart, seat]);
         seat.seatAvailable = false;
       } else {
+        //filter cart array for matching seat id and set cart accordingly
+        const newCart = cart.filter((c) => c.id !== seat.id);
+        setCart(newCart);
         seat.seatAvailable = true;
       }
-      setCart([...cart, seat]);
+      
      //update seat in state to show new status   
      setSeats([...seats]);
     updateSeats(seat);
