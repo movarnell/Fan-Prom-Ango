@@ -23,9 +23,12 @@ function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
       } else {
         //filter cart array for matching seat id and set cart accordingly
         const newCart = cart.filter((c) => c.id !== seat.id);
+        if (newCart.length < cart.length) {
+          seat.seatAvailable = true;
+        }
         setCart(newCart);
-        seat.seatAvailable = true;
       }
+      
       
      //update seat in state to show new status   
      setSeats([...seats]);
