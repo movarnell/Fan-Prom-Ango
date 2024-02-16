@@ -58,7 +58,7 @@ function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
   return (
     <Col className='align-items-center justify-items-center'>
       <Row>
-      <h2 className='text-light'>Total: ${cart.reduce((acc, seat) => acc + seat.seatPrice, 0)}</h2>
+      <h2 className='text-light'>Total: ${cart.reduce((acc, seat) => acc + seat.seatPrice, 0).toFixed(2)}</h2>
       <hr style={{color:'#fff'}}/>
       {cart.length > 0 && <h4 className='text-light'>You have selected the following seats:</h4>} {cart.length === 0 && <h4 className='text-light'>Please select a seat</h4>}
       <h4 className='text-light'>
