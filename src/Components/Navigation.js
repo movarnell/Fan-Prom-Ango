@@ -3,19 +3,19 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Logo from "../Assets/logo.png";
-
+import { Link } from 'react-router-dom';
 function Navigation() {
   return (
     <Navbar sticky='top' expand='lg' className='bg-dark' data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href='#home'><img src={Logo} alt="Fan-Prom-Ango logo" width="40px" height="auto"></img></Navbar.Brand>
+        <Navbar.Brand href='/'><img src={Logo} alt="Fan-Prom-Ango logo" width="40px" height="auto"></img></Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='me-auto'>
-            <Nav.Link href='#home'>Home</Nav.Link>
-            <Nav.Link href='#link'>Cart</Nav.Link>
+            <Link to="/" className='nav-link'>Home</Link>
+            <Link to="/DevTools" className='nav-link'>DevTools</Link>
             <NavDropdown title='Movies' id='basic-nav-dropdown'>
-              <NavDropdown.Item href='#action/3.1'>Browse Movies</NavDropdown.Item>
+              <NavDropdown.Item href='/Movies'>Browse Movies</NavDropdown.Item>
               <NavDropdown.Item href='#action/3.2'>
                 Another action
               </NavDropdown.Item>

@@ -1,3 +1,9 @@
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
 
 .seat {
     transform-style: preserve-3d;
@@ -12,6 +18,7 @@
     transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
     cursor: pointer;
     box-shadow: 0px 0px 5px 0px #0000008c;
+    user-select: none;
 }
 
 .seat:hover {

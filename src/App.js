@@ -4,7 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./Components/Navigation";
 import { useEffect, useState } from "react";
 import Seat from "./Components/Seat";
-// import { Row } from "react-bootstrap";
+import DevTools from "./Pages/DevTools";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   const [seats, setSeats] = useState([]);
@@ -51,26 +52,27 @@ function App() {
     setIsLoading(false);
   };
 console.log(seats);
-  return (
-    <div className='container-fluid bg-dark'>
+
+
+  return (<div className='container-fluid bg-dark'>
+  <Router>
+    
       <Navigation />
       <Header />
       
       <div className='container'>
         
-        
+       
+          <Switch>
+            <Route exact path='/' render={() => <Seat seats={seats} setSeats={setSeats} updateSeats={updateSeats} cart={cart} setCart={setCart} isLoading={isLoading} />} />
+            <Route path='/devtools' render={() => <DevTools seats={seats} updateSeats={updateSeats} setIsLoading={setIsLoading} loading={isLoading}/>} />
+          </Switch>
+       
           
-          <Seat
-            seats={seats}
-            setSeats={setSeats}
-            updateSeats={updateSeats}
-            cart={cart}
-            setCart={setCart}
-            isLoading={isLoading}
-          />
-      
+          
       </div>
-    </div>
+    
+    </Router></div> 
   );
 }
 
