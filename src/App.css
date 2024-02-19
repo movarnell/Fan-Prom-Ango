@@ -9,13 +9,13 @@
     max-height:50px;
     min-width:20px;
     max-width:20px;
-    transition: all 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
     cursor: pointer;
     box-shadow: 0px 0px 5px 0px #0000008c;
 }
 
 .seat:hover {
-    box-shadow: 0px 0px 20px 0px #e6e6e6b2;
+   transform: scale(1.05); 
 }
 
 .seat-available {
@@ -34,11 +34,11 @@
     align-items: center;
     height:20px;
     width:20px;
-    background-color: #da2d2d;
+    background-color: #e04747;
 }
 .seat-taken:hover {
     cursor: not-allowed;
-    box-shadow: 0px 0px 5px 0px #0000008c;
+    
 }
 
 .seat-disabled {
@@ -52,6 +52,16 @@
 
 .seat-in-cart {
     background-color: #f0a500;
+}
+/* add cart logo in after pseudo */
+.seat-in-cart::after {
+    content: url('./Assets/CartDark.svg');
+    position: absolute;
+    left: 5%;
+}
+
+.seat-in-cart:hover::after {
+    content: url('./Assets/CartLight.svg');
 }
 
 .seat-in-cart:hover {

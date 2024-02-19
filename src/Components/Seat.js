@@ -29,9 +29,7 @@ function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
       
      //update seat in state to show new status   
      setSeats([...seats]);
-    updateSeats(seat);
-
-        console.log(seat, "This was sent to updateSeats")
+  
       }
     
     //THIS IS CURRENTLY ONLY WAY TO CHANGE SEAT STATE IN DB, NEED WAY FOR DEVS OR ADMINS TO CHANGE SEAT STATE
@@ -56,7 +54,7 @@ const isSeatInCart = (seat) => cart.some((cartSeat) => cartSeat.id === seat.id);
     <Col className='align-items-center justify-items-center'>
       <Row>
         <h2 className='text-light'>Total: ${cart.reduce((acc, seat) => acc + seat.seatPrice, 0).toFixed(2)}</h2>
-        <hr style={{color:'#fff'}}/>
+        <hr className='text-light'/>
 
         {cart.length > 0 && 
           <h4 className='text-light'>You have selected the following seats: {cart &&

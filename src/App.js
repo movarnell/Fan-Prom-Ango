@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   const getSeats = async () => {
-    
+    setIsLoading(true);
     const response = await fetch(URL);
     const data = await response.json();
     setSeats(data);
