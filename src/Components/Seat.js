@@ -1,6 +1,6 @@
 import { Col, Button, Row } from 'react-bootstrap';
 import Loading from './Loading';
-
+import DisabledSVG from './DisabledSVG';
 function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
   // NOTE The following code is used to filter the seats into rows. We have used the filter method to filter the seats
     let rowA = seats.filter(seat => seat.id < 6);
@@ -61,15 +61,16 @@ function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
       <Row>
       <h2 className='text-light'>Total: ${cart.reduce((acc, seat) => acc + seat.seatPrice, 0).toFixed(2)}</h2>
       <hr style={{color:'#fff'}}/>
+
       {cart.length > 0 && <h4 className='text-light'>You have selected the following seats: {cart &&
-          cart.map(
-            (ticket) =>
-              `${
-                ticket.disabled
-                  ? ticket.seatDescription + " (Disabled Seat) "
-                  : ticket.seatDescription
-              } `
-          )}</h4>} {cart.length === 0 && <h4 className='text-light'>Please select a seat</h4>}
+    cart.map(
+        (ticket) =>
+        ticket.disabled
+        ? [<span key={ticket.id}>{ticket.seatDescription + ' '}</span>, <DisabledSVG key={`${ticket.id}-disabled`} />, ", "]
+        : <span key={ticket.id}>{ticket.seatDescription + ', '}</span>
+    )}</h4>}
+
+      {cart.length === 0 && <h4 className='text-light'>Please select a seat</h4>}
       <h4 className='text-light'>
         {" "}
       </h4>
