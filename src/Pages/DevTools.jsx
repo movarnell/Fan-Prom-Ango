@@ -17,6 +17,7 @@ const DevTools = ({seats, updateSeats, setIsLoading, loading}) => {
             updateSeats(seat);
         });
         setIsLoading(false);
+        alert('Made all seats available (MAY FAIL FOR REQUEST RATE LIMIT)');
     }
 
     const makeSeatsUnavailable = () => {
@@ -24,6 +25,7 @@ const DevTools = ({seats, updateSeats, setIsLoading, loading}) => {
             seat.seatAvailable = false;
             updateSeats(seat);
         });
+        alert('Made all seats unavailable (MAY FAIL FOR REQUEST RATE LIMIT)');
     }
 
     const makeSeatDisabled = (id) => {
@@ -36,28 +38,44 @@ const DevTools = ({seats, updateSeats, setIsLoading, loading}) => {
         seat.disabled = true;
         updateSeats(seat);
         setIsLoading(false);
+        alert('Made Seat ' + id + ' Disabled');
     }
 
     const makeSeatNotDisabled = (description) => {
         setIsLoading(true);
         const seat = seats.find(seat => seat.seatDescription === description);
+        if (!seat) {
+            alert('Seat not found');
+            return;
+        }
         seat.disabled = false;
         updateSeats(seat);
         setIsLoading(false);
+        alert('Made Seat ' + description + ' Not Disabled');
     }
 const makeSeatAvailable = (description) => {
     setIsLoading(true);
     const seat = seats.find(seat => seat.seatDescription === description);
+    if (!seat) {
+        alert('Seat not found');
+        return;
+    }
     seat.seatAvailable = true;
     updateSeats(seat);
     setIsLoading(false);
+    alert('Made Seat ' + description + ' Available');
 }
 const makeSeatUnavailable = (description) => {
     setIsLoading(true);
     const seat = seats.find(seat => seat.seatDescription === description);
+    if (!seat) {
+        alert('Seat not found');
+        return;
+    }
     seat.seatAvailable = false;
     updateSeats(seat);
     setIsLoading(false);
+    alert('Made Seat ' + description + ' Unavailable');
 }
 
   
