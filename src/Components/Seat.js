@@ -10,22 +10,18 @@ function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
 
 
 
-//FIXME When a seat is clicked, duplicates show up due to line 24. We need to update state without duplicates. 
-// NOTE Make a method to 'hold' selected seats so others can't purchase them. possibly add a timer as well to release the seat if not purchased. New color when seat is selected but not yet purchased. 
+
+// NOTE Make a method to 'hold' selected seats so others can't purchase them. possibly add a timer as well to release the seat if not purchased.
 
     const handleSeatClick = (e, seat) => {
       e.preventDefault();
-      //if - seat is available, add to cart and set seat to unavailable
-      //else - if seat is not available, remove from cart and set seat to available
-      if(seat.seatAvailable){
+      //if - seat is available, and not in cart -  add to cart
+      //else - if is in cart - remove from cart
+      if(seat.seatAvailable && !isSeatInCart(seat)){
         setCart([...cart, seat]);
       } else {
         //filter cart array for matching seat id and set cart accordingly
         const newCart = cart.filter((c) => c.id !== seat.id);
-        //if seat was in cart, seat is removed from cart and available
-      if (newCart.length < cart.length) { 
-          seat.seatAvailable = true;
-        } 
         setCart(newCart);
       }
       
@@ -37,6 +33,7 @@ function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
         console.log(seat, "This was sent to updateSeats")
       }
     
+    //THIS IS CURRENTLY ONLY WAY TO CHANGE SEAT STATE IN DB, NEED WAY FOR DEVS OR ADMINS TO CHANGE SEAT STATE
    const finalPurchase = (e) => {
     e.preventDefault();
    if (cart.length === 0) {

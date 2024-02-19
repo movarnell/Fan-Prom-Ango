@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./Components/Navigation";
 import { useEffect, useState } from "react";
 import Seat from "./Components/Seat";
-import { Container } from "react-bootstrap";
 // import { Row } from "react-bootstrap";
 
 function App() {
