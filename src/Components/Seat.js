@@ -19,7 +19,6 @@ function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
       //else - if seat is not available, remove from cart and set seat to available
       if(seat.seatAvailable){
         setCart([...cart, seat]);
-        seat.seatAvailable = false;
       } else {
         //filter cart array for matching seat id and set cart accordingly
         const newCart = cart.filter((c) => c.id !== seat.id);
@@ -51,8 +50,7 @@ function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
     }
   };
    
-
-
+const isSeatInCart = (seat) => cart.some((cartSeat) => cartSeat.id === seat.id);
 // INFO we have added the grid of seats to the Seat component. We have also added the onClick event to the seats. We will use this to select the seats. We will also add the logic to select the seats in the next step.
 
 
@@ -86,72 +84,80 @@ function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
         <h2 className='text-light'>Row A</h2>
         {isLoading ? <Loading/>:rowA.map((seat) => (
           <div
-            key={seat.id}
-            className={
-              seat.seatAvailable
-                ? seat.seatAvailable && seat.disabled
-                  ? "seat seat-disabled col-2 m-2"
-                  : " seat seat-available col-2 m-2"
-                : "seat seat-taken col-2 m-2"
-            }
-            onClick={(e) => handleSeatClick(e, seat)}
-          >
-            {seat.seatDescription}
-          </div>
+          key={seat.id}
+          className={
+            isSeatInCart(seat)
+                ? "seat seat-in-cart col-2 m-2"
+                : !seat.seatAvailable
+                    ? "seat seat-taken col-2 m-2"
+                    : seat.disabled
+                        ? "seat seat-disabled col-2 m-2"
+                        : "seat seat-available col-2 m-2"
+        }
+          onClick={(e) => handleSeatClick(e, seat)}
+        >
+          {seat.seatDescription}
+        </div>
         ))}
       </div>
       <div className='row'>
         <h2 className='text-light'>Row B</h2>
         {isLoading ? <Loading/>:rowB.map((seat) => (
           <div
-            key={seat.id}
-            className={
-              seat.seatAvailable
-                ? seat.seatAvailable && seat.disabled
-                  ? "seat seat-disabled col-2 m-2"
-                  : " seat seat-available col-2 m-2"
-                : "seat seat-taken col-2 m-2"
-            }
-            onClick={(e) => handleSeatClick(e, seat)}
-          >
-            {seat.seatDescription}
-          </div>
+          key={seat.id}
+          className={
+            isSeatInCart(seat)
+                ? "seat seat-in-cart col-2 m-2"
+                : !seat.seatAvailable
+                    ? "seat seat-taken col-2 m-2"
+                    : seat.disabled
+                        ? "seat seat-disabled col-2 m-2"
+                        : "seat seat-available col-2 m-2"
+        }
+          onClick={(e) => handleSeatClick(e, seat)}
+        >
+          {seat.seatDescription}
+        </div>
         ))}
       </div>
       <div className='row'>
         <h2 className='text-light'>Row C</h2>
         {isLoading ? <Loading/>:rowC.map((seat) => (
           <div
-            key={seat.id}
-            className={
-              seat.seatAvailable
-                ? seat.seatAvailable && seat.disabled
-                  ? "seat seat-disabled col-2 m-2"
-                  : " seat seat-available col-2 m-2"
-                : "seat seat-taken col-2 m-2"
-            }
-            onClick={(e) => handleSeatClick(e, seat)}
-          >
-            {seat.seatDescription}
-          </div>
+          key={seat.id}
+          className={
+            isSeatInCart(seat)
+                ? "seat seat-in-cart col-2 m-2"
+                : !seat.seatAvailable
+                    ? "seat seat-taken col-2 m-2"
+                    : seat.disabled
+                        ? "seat seat-disabled col-2 m-2"
+                        : "seat seat-available col-2 m-2"
+        }
+          onClick={(e) => handleSeatClick(e, seat)}
+        >
+          {seat.seatDescription}
+        </div>
         ))}
       </div>
       <div className='row'>
         <h2 className='text-light'>Row D</h2>
         {isLoading ? <Loading/>:rowD.map((seat) => (
           <div
-            key={seat.id}
-            className={
-              seat.seatAvailable
-                ? seat.seatAvailable && seat.disabled
-                  ? "seat seat-disabled col-2 m-2"
-                  : " seat seat-available col-2 m-2"
-                : "seat seat-taken col-2 m-2"
-            }
-            onClick={(e) => handleSeatClick(e, seat)}
-          >
-            {seat.seatDescription}
-          </div>
+          key={seat.id}
+          className={
+            isSeatInCart(seat)
+                ? "seat seat-in-cart col-2 m-2"
+                : !seat.seatAvailable
+                    ? "seat seat-taken col-2 m-2"
+                    : seat.disabled
+                        ? "seat seat-disabled col-2 m-2"
+                        : "seat seat-available col-2 m-2"
+        }
+          onClick={(e) => handleSeatClick(e, seat)}
+        >
+          {seat.seatDescription}
+        </div>
         ))}
       </div>
     </Col>

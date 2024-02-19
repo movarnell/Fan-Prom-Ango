@@ -42,15 +42,20 @@
 }
 
 .seat-disabled {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height:20px;
-    width:20px;
+    
     background-color: #497ddf !important;
 }
 .seat-disabled:hover {
     background-color: #002a79 !important;
+    color: #fff;
+}
+
+.seat-in-cart {
+    background-color: #f0a500;
+}
+
+.seat-in-cart:hover {
+    background-color: #b37400;
     color: #fff;
 }
 
