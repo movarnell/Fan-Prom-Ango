@@ -3,29 +3,57 @@ import { useState } from 'react';
 import { Button, Card} from 'react-bootstrap';
 
 const DevTools = ({seats, updateSeats, setIsLoading, loading}) => {
-    
     const [userInput1, setUserInput1] = useState('');
     const [userInput2, setUserInput2] = useState('');
     const [userInput3, setUserInput3] = useState('');
     const [userInput4, setUserInput4] = useState('');
    
    
-    const  makeSeatsAvailable = () => {
+    const makeSeatsAvailable = () => {
         setIsLoading(true);
+
+        let delay = 0;
         seats.forEach((seat) => {
-            seat.seatAvailable = true;
-            updateSeats(seat);
+            delay += 800;
+            setTimeout(() => {
+                seat.seatAvailable = true;
+                updateSeats(seat);
+
+                // Check if this is the last seat
+                if (seat === seats[seats.length - 1]) {
+                    setIsLoading(false);
+                }
+                console.log(
+                  "Seat " + seat.seatDescription + " is now available.");
+            }, delay);
+            
         });
-        setIsLoading(false);
-        alert('Made all seats available (MAY FAIL FOR REQUEST RATE LIMIT)');
-    }
+
+        // alert('Made all seats available (MAY FAIL FOR REQUEST RATE LIMIT)');
+    };
 
     const makeSeatsUnavailable = () => {
+        
+        setIsLoading(true);
+        let delay = 0;
         seats.forEach((seat) => {
-            seat.seatAvailable = false;
-            updateSeats(seat);
+            delay += 800;
+            setTimeout(() => {
+                seat.seatAvailable = false;
+                updateSeats(seat);
+                // Check if this is the last seat
+                if (seat === seats[seats.length - 1]) {
+                    setIsLoading(false);
+                }
+                console.log(
+                  "Seat " + seat.seatDescription + " is now unavailable. Delay: ",
+                  delay
+                );
+            }, delay);
+            
         });
-        alert('Made all seats unavailable (MAY FAIL FOR REQUEST RATE LIMIT)');
+        // alert('Made all seats unavailable (MAY FAIL FOR REQUEST RATE LIMIT)');
+
     }
 
     const makeSeatDisabled = (id) => {
@@ -87,7 +115,7 @@ return (
         <Card className='mb-3'>
           <Card.Body>
             <Card.Title>Make all seats available</Card.Title>
-            loading && <Button onClick={makeSeatsAvailable}>Make all seats available</Button>
+            <Button onClick={makeSeatsAvailable}>Make all seats available</Button>
           </Card.Body>
         </Card>
      
