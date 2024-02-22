@@ -1,5 +1,7 @@
 import { Col, Button, Row } from 'react-bootstrap';
-
+import Loading from './Loading';
+import DisabledSVG from './DisabledSVG';
+import SeatRow from './SeatRow';
 function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
   // NOTE The following code is used to filter the seats into rows. We have used the filter method to filter the seats
     let rowA = seats.filter(seat => seat.id < 6);
@@ -9,24 +11,28 @@ function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
 
 
 
-//FIXME When a seat is clicked, duplicates show up due to line 24. We need to update state without duplicates. 
-// NOTE Make a method to 'hold' selected seats so others can't purchase them. possibly add a timer as well to release the seat if not purchased. New color when seat is selected but not yet purchased. 
+
+// NOTE Make a method to 'hold' selected seats so others can't purchase them. possibly add a timer as well to release the seat if not purchased.
 
     const handleSeatClick = (e, seat) => {
       e.preventDefault();
-      if(seat.seatAvailable){
-        seat.seatAvailable = false;
+      //if - seat is available, and not in cart -  add to cart
+      //else - if is in cart - remove from cart
+      if(seat.seatAvailable && !isSeatInCart(seat)){
+        setCart([...cart, seat]);
       } else {
-        seat.seatAvailable = true;
+        //filter cart array for matching seat id and set cart accordingly
+        const newCart = cart.filter((c) => c.id !== seat.id);
+        setCart(newCart);
       }
-      setCart([...cart, seat]);
+      
+      
      //update seat in state to show new status   
      setSeats([...seats]);
-    updateSeats(seat);
-
-        console.log(seat, "This was sent to updateSeats")
+  
       }
     
+    //THIS IS CURRENTLY ONLY WAY TO CHANGE SEAT STATE IN DB, NEED WAY FOR DEVS OR ADMINS TO CHANGE SEAT STATE
    const finalPurchase = (e) => {
     e.preventDefault();
    if (cart.length === 0) {
@@ -40,19 +46,28 @@ function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
     }
   };
    
-
-
+const isSeatInCart = (seat) => cart.some((cartSeat) => cartSeat.id === seat.id);
 // INFO we have added the grid of seats to the Seat component. We have also added the onClick event to the seats. We will use this to select the seats. We will also add the logic to select the seats in the next step.
 
 
   return (
     <Col className='align-items-center justify-items-center'>
       <Row>
-        {cart.length > 0 && <p>You have selected the following seats</p>}
-        {cart &&
-          cart.forEach((seat) => (
-            <div className='text-light'>{seat.seatDescription}</div>
-          ))}
+        <h2 className='text-light'>Total: ${cart.reduce((acc, seat) => acc + seat.seatPrice, 0).toFixed(2)}</h2>
+        <hr className='text-light'/>
+
+        {cart.length > 0 && 
+          <h4 className='text-light'>You have selected the following seats: {cart &&
+            cart.map(
+                (ticket) =>
+                ticket.disabled
+                ? [<span key={ticket.id}>{ticket.seatDescription + ' '}</span>, <DisabledSVG key={`${ticket.id}-disabled`} />, ", "]
+                : <span key={ticket.id}>{ticket.seatDescription + ', '}</span>
+             )}
+          </h4>}
+
+        {cart.length === 0 && <h4 className='text-light'>Please select a seat</h4>}
+        
         <Button
           onClick={(e) => finalPurchase(e)}
           className='btn btn-success m-2'
@@ -60,78 +75,10 @@ function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
           Ready to Purchase
         </Button>
       </Row>
-      <div className='row'>
-        <h2 className='text-light'>Row A</h2>
-        {rowA.map((seat) => (
-          <div
-            key={seat.id}
-            className={
-              seat.seatAvailable
-                ? seat.seatAvailable && seat.disabled
-                  ? "seat seat-disabled col-2 m-2"
-                  : " seat seat-available col-2 m-2"
-                : "seat seat-taken col-2 m-2"
-            }
-            onClick={(e) => handleSeatClick(e, seat)}
-          >
-            {seat.seatDescription}
-          </div>
-        ))}
-      </div>
-      <div className='row'>
-        <h2 className='text-light'>Row B</h2>
-        {rowB.map((seat) => (
-          <div
-            key={seat.id}
-            className={
-              seat.seatAvailable
-                ? seat.seatAvailable && seat.disabled
-                  ? "seat seat-disabled col-2 m-2"
-                  : " seat seat-available col-2 m-2"
-                : "seat seat-taken col-2 m-2"
-            }
-            onClick={(e) => handleSeatClick(e, seat)}
-          >
-            {seat.seatDescription}
-          </div>
-        ))}
-      </div>
-      <div className='row'>
-        <h2 className='text-light'>Row C</h2>
-        {rowC.map((seat) => (
-          <div
-            key={seat.id}
-            className={
-              seat.seatAvailable
-                ? seat.seatAvailable && seat.disabled
-                  ? "seat seat-disabled col-2 m-2"
-                  : " seat seat-available col-2 m-2"
-                : "seat seat-taken col-2 m-2"
-            }
-            onClick={(e) => handleSeatClick(e, seat)}
-          >
-            {seat.seatDescription}
-          </div>
-        ))}
-      </div>
-      <div className='row'>
-        <h2 className='text-light'>Row D</h2>
-        {rowD.map((seat) => (
-          <div
-            key={seat.id}
-            className={
-              seat.seatAvailable
-                ? seat.seatAvailable && seat.disabled
-                  ? "seat seat-disabled col-2 m-2"
-                  : " seat seat-available col-2 m-2"
-                : "seat seat-taken col-2 m-2"
-            }
-            onClick={(e) => handleSeatClick(e, seat)}
-          >
-            {seat.seatDescription}
-          </div>
-        ))}
-      </div>
+      <SeatRow row={rowA} isSeatInCart={isSeatInCart} handleSeatClick={handleSeatClick} isLoading={isLoading} Loading={Loading}/>
+      <SeatRow row={rowB} isSeatInCart={isSeatInCart} handleSeatClick={handleSeatClick} isLoading={isLoading} Loading={Loading}/>
+      <SeatRow row={rowC} isSeatInCart={isSeatInCart} handleSeatClick={handleSeatClick} isLoading={isLoading} Loading={Loading}/>
+      <SeatRow row={rowD} isSeatInCart={isSeatInCart} handleSeatClick={handleSeatClick} isLoading={isLoading} Loading={Loading}/>
     </Col>
   );
 }
