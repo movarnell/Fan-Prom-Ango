@@ -1,8 +1,34 @@
 import { Col, Button, Row } from 'react-bootstrap';
-import Loading from './Loading';
-import DisabledSVG from './DisabledSVG';
-import SeatRow from './SeatRow';
-function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading, timerRunning, setTimerRunning, purchaseTimer }) {
+import Loading from '../Components/Loading';
+import DisabledSVG from '../Components/DisabledSVG';
+import SeatRow from '../Components/SeatRow';
+import { useEffect, useState } from 'react';
+import CartTimer from '../Components/CartTimer';
+
+function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
+
+const [cartTimer, setCartTimer] = useState(0);
+const [timerRunning, setTimerRunning] = useState(false);
+
+
+
+useEffect(() => {
+  const timerInterval = setInterval(() => {
+    if (timerRunning) {
+      setCartTimer((prev) => prev + 1);
+      console.log('line 18 set' + cartTimer);
+    }
+    if (cartTimer === 300) {
+      setTimerRunning(false);
+      setCart([]);
+      setCartTimer(0);
+    }
+  }, 1000);
+
+  return () => clearInterval(timerInterval); // this will clear the interval when the component unmounts
+}, [cartTimer, timerRunning, setCart]); // dependencies of the useEffect hook
+
+
   // NOTE The following code is used to filter the seats into rows. We have used the filter method to filter the seats
     let rowA = seats.filter(seat => seat.id < 6);
     let rowB = seats.filter(seat => seat.id > 5 && seat.id < 11);
@@ -11,35 +37,39 @@ function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading, timerRun
 
 
 
-
 // NOTE Make a method to 'hold' selected seats so others can't purchase them. possibly add a timer as well to release the seat if not purchased.
 
     const handleSeatClick = (e, seat) => {
       e.preventDefault();
       
-      //if - seat is available, and not in cart -  add to cart
-      //else - if is in cart - remove from cart
-      if(seat.seatAvailable && !isSeatInCart(seat)){
-        timerRunning = true;
+     
+      
+      if(seat.seatAvailable && !isSeatInCart(seat)){ //if - seat is available, and not in cart -  add to cart
         setCart([...cart, seat]);
-      } else {
+        if(!timerRunning) {
+          setTimerRunning(true);
+        }
+        if(cart.length === 0) {
+          
+        }
+      } else {//else - if is in cart - remove from cart
         //filter cart array for matching seat id and set cart accordingly
         const newCart = cart.filter((c) => c.id !== seat.id);
-        if(cart.length < 1){
+        if(newCart.length === 0) {
           setTimerRunning(false);
+          setCartTimer(0);
         }
         setCart(newCart);
       }
       
-      
+      console.log('line 77 set' + timerRunning);
      //update seat in state to show new status   
      setSeats([...seats]);
-  
-      }
+  }
     
-    //THIS IS CURRENTLY ONLY WAY TO CHANGE SEAT STATE IN DB, NEED WAY FOR DEVS OR ADMINS TO CHANGE SEAT STATE
    const finalPurchase = (e) => {
-    e.preventDefault();
+    setTimerRunning(false);
+        e.preventDefault();
    if (cart.length === 0) {
      alert("Please select a seat");
    } else if (cart.length > 0) {
@@ -58,29 +88,37 @@ const isSeatInCart = (seat) => cart.some((cartSeat) => cartSeat.id === seat.id);
   return (
     <Col className='align-items-center justify-items-center'>
       <Row>
-        <h2 className='text-light'>Total: ${cart.reduce((acc, seat) => acc + seat.seatPrice, 0).toFixed(2)}</h2>
+        <h2 className='text-light'>Total: ${cart.reduce((acc, seat) => acc + seat.seatPrice, 0).toFixed(2)}
+          <Button
+            onClick={(e) => finalPurchase(e)}
+            className='btn btn-success m-2'
+          >
+              Ready to Purchase
+          </Button>
+        </h2>
         
-        <h2 className='text-light'>Timer: {Math.floor(purchaseTimer / 60)}:{purchaseTimer % 60}</h2>
-        <hr className='text-light'/>
-
         {cart.length > 0 && 
-          <h4 className='text-light'>You have selected the following seats: {cart &&
+          <h4 className='text-light'>You have selected the following seat(s): {cart &&
             cart.map(
                 (ticket) =>
                 ticket.disabled
                 ? [<span key={ticket.id}>{ticket.seatDescription + ' '}</span>, <DisabledSVG key={`${ticket.id}-disabled`} />, ", "]
                 : <span key={ticket.id}>{ticket.seatDescription + ', '}</span>
              )}
-          </h4>}
-
-        {cart.length === 0 && <h4 className='text-light'>Please select a seat</h4>}
+          </h4>
+        }
+          
+        {cart.length === 0 && 
+          <h4 className='text-light'>
+            Please select a seat
+          </h4>
+        }
+        <hr className='text-light'/>
+{timerRunning && (<CartTimer timer={cartTimer} />)}
         
-        <Button
-          onClick={(e) => finalPurchase(e)}
-          className='btn btn-success m-2'
-        >
-          Ready to Purchase
-        </Button>
+
+        
+        
       </Row>
       <SeatRow row={rowA} isSeatInCart={isSeatInCart} handleSeatClick={handleSeatClick} isLoading={isLoading} Loading={Loading}/>
       <SeatRow row={rowB} isSeatInCart={isSeatInCart} handleSeatClick={handleSeatClick} isLoading={isLoading} Loading={Loading}/>

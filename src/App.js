@@ -3,7 +3,7 @@ import Header from "./Components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./Components/Navigation";
 import { useEffect, useState } from "react";
-import Seat from "./Components/Seat";
+import Seat from "./Pages/Seat";
 import DevTools from "./Pages/DevTools";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -12,21 +12,9 @@ function App() {
   const [totalSales, setTotalSales] = useState(0);
   const [cart, setCart] = useState([]);
   const [isLoading, setIsLoading] = useState(false)
-  const [purchaseTimer, setPurchaseTimer] = useState(0);
-  const [timerRunning, setTimerRunning] = useState(false);
   const URL = "https://65bc1cf852189914b5bd9bf1.mockapi.io/seats/";
   
-  while (timerRunning) {
-    setTimeout(() => {
-      setPurchaseTimer(purchaseTimer + 1);
-      if (purchaseTimer > 360 || cart.length < 1) {
-        setPurchaseTimer(0);
-        setTimerRunning(false);
-        setCart([]);
-      }
-    }, 1000);
-    
-  }
+  
 
   useEffect(() => {
     setIsLoading(true);
@@ -77,7 +65,7 @@ console.log(seats);
         
        
           <Switch>
-            <Route exact path='/' render={() => <Seat seats={seats} setSeats={setSeats} updateSeats={updateSeats} cart={cart} setCart={setCart} isLoading={isLoading} timerRunning={timerRunning} setTimerRunning={setTimerRunning} purchaseTimer={purchaseTimer} />} />
+            <Route exact path='/' render={() => <Seat seats={seats} setSeats={setSeats} updateSeats={updateSeats} cart={cart} setCart={setCart} isLoading={isLoading}/>} />
             <Route path='/devtools' render={() => <DevTools seats={seats} updateSeats={updateSeats} setIsLoading={setIsLoading} loading={isLoading}/>} />
           </Switch>
        
