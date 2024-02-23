@@ -6,12 +6,14 @@ import { useEffect, useState } from "react";
 import Seat from "./Pages/Seat";
 import DevTools from "./Pages/DevTools";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
+import Checkout from "./Pages/Checkout";
 function App() {
   const [seats, setSeats] = useState([]);
   const [totalSales, setTotalSales] = useState(0);
   const [cart, setCart] = useState([]);
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
+  const [cartTimer, setCartTimer] = useState(0);
+const [timerRunning, setTimerRunning] = useState(false);
   const URL = "http://localhost:3001/seats";
 
 
@@ -62,8 +64,9 @@ console.log(seats);
         
        
           <Switch>
-            <Route exact path='/' render={() => <Seat seats={seats} setSeats={setSeats} updateSeats={updateSeats} cart={cart} setCart={setCart} isLoading={isLoading} />} />
+            <Route exact path='/' render={() => <Seat seats={seats} setSeats={setSeats} updateSeats={updateSeats} cart={cart} setCart={setCart} isLoading={isLoading} cartTimer={cartTimer} setCartTimer={setCartTimer} timerRunning={timerRunning} setTimerRunning={setTimerRunning}/>} />
             <Route path='/devtools' render={() => <DevTools seats={seats} updateSeats={updateSeats} setIsLoading={setIsLoading} isLoading={isLoading}/>} />
+            <Route path='/checkout' render={() => <Checkout cart={cart} setCart={setCart} isLoading={isLoading} setIsLoading={setIsLoading} timerRunning={timerRunning} setTimerRunning={setTimerRunning} updateSeats={updateSeats} />} />
           </Switch>
        
           

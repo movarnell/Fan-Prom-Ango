@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './CartTimer.module.css'
 const CartTimer = ({ timer }) => {
+//secons is the time left to complete the purchase, 300 is the time limit in seconds. 
     const seconds = 300 - timer;
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;

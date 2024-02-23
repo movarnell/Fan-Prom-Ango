@@ -4,11 +4,11 @@ import DisabledSVG from '../Components/DisabledSVG';
 import SeatRow from '../Components/SeatRow';
 import { useEffect, useState } from 'react';
 import CartTimer from '../Components/CartTimer';
+import { Link } from 'react-router-dom';
 
-function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading}) {
+function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading, cartTimer, setCartTimer, timerRunning, setTimerRunning}) {
 
-const [cartTimer, setCartTimer] = useState(0);
-const [timerRunning, setTimerRunning] = useState(false);
+
 
 
 
@@ -67,19 +67,7 @@ useEffect(() => {
      setSeats([...seats]);
   }
     
-   const finalPurchase = (e) => {
-    setTimerRunning(false);
-        e.preventDefault();
-   if (cart.length === 0) {
-     alert("Please select a seat");
-   } else if (cart.length > 0) {
-     cart.forEach((seat) => {
-       seat.seatAvailable = false;
-       updateSeats(seat);
-       setCart([]);
-      });
-    }
-  };
+   
    
 const isSeatInCart = (seat) => cart.some((cartSeat) => cartSeat.id === seat.id);
 // INFO we have added the grid of seats to the Seat component. We have also added the onClick event to the seats. We will use this to select the seats. We will also add the logic to select the seats in the next step.
@@ -89,12 +77,10 @@ const isSeatInCart = (seat) => cart.some((cartSeat) => cartSeat.id === seat.id);
     <Col className='align-items-center justify-items-center'>
       <Row>
         <h2 className='text-light'>Total: ${cart.reduce((acc, seat) => acc + seat.seatPrice, 0).toFixed(2)}
-          <Button
-            onClick={(e) => finalPurchase(e)}
-            className='btn btn-success m-2'
-          >
-              Ready to Purchase
-          </Button>
+          <Link className="btn btn-success ms-4" to='/checkout'>
+            Ready to Purchase
+          </Link>
+          
         </h2>
         
         {cart.length > 0 && 
