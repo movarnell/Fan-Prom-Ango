@@ -22,7 +22,7 @@
   },
   {
     "seatDescription": "A4",
-    "seatAvailable": true,
+    "seatAvailable": false,
     "seatPrice": 5.99,
     "disabled": false,
     "id": "4"
