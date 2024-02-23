@@ -14,7 +14,7 @@ const DevTools = ({seats, updateSeats, setIsLoading, loading}) => {
 
         let delay = 0;
         seats.forEach((seat) => {
-            delay += 800;
+            delay += 100;
             setTimeout(() => {
                 seat.seatAvailable = true;
                 updateSeats(seat);

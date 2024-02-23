@@ -12,14 +12,12 @@ function App() {
   const [totalSales, setTotalSales] = useState(0);
   const [cart, setCart] = useState([]);
   const [isLoading, setIsLoading] = useState(false)
-  const URL = "https://65bc1cf852189914b5bd9bf1.mockapi.io/seats/";
-  
-  
+  const URL = "http://localhost:3001/seats";
+
 
   useEffect(() => {
     setIsLoading(true);
     getSeats();
-    
   }, []);
 
   const getSeats = async () => {
@@ -60,12 +58,11 @@ console.log(seats);
     
       <Navigation />
       <Header />
-      
       <div className='container'>
         
        
           <Switch>
-            <Route exact path='/' render={() => <Seat seats={seats} setSeats={setSeats} updateSeats={updateSeats} cart={cart} setCart={setCart} isLoading={isLoading}/>} />
+            <Route exact path='/' render={() => <Seat seats={seats} setSeats={setSeats} updateSeats={updateSeats} cart={cart} setCart={setCart} isLoading={isLoading} />} />
             <Route path='/devtools' render={() => <DevTools seats={seats} updateSeats={updateSeats} setIsLoading={setIsLoading} loading={isLoading}/>} />
           </Switch>
        
