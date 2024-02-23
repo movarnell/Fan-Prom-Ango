@@ -22,7 +22,7 @@
   },
   {
     "seatDescription": "A4",
-    "seatAvailable": false,
+    "seatAvailable": true,
     "seatPrice": 5.99,
     "disabled": false,
     "id": "4"
@@ -31,7 +31,7 @@
     "seatDescription": "A5",
     "seatAvailable": true,
     "seatPrice": 5.99,
-    "disabled": false,
+    "disabled": true,
     "id": "5"
   },
   {
@@ -66,7 +66,7 @@
     "seatDescription": "B5",
     "seatAvailable": true,
     "seatPrice": 5.99,
-    "disabled": false,
+    "disabled": true,
     "id": "10"
   },
   {
@@ -101,7 +101,7 @@
     "seatDescription": "C5",
     "seatAvailable": true,
     "seatPrice": 5.99,
-    "disabled": false,
+    "disabled": true,
     "id": "15"
   },
   {
@@ -136,7 +136,7 @@
     "seatDescription": "D5",
     "seatAvailable": true,
     "seatPrice": 5.99,
-    "disabled": false,
+    "disabled": true,
     "id": "20"
   }
 ]

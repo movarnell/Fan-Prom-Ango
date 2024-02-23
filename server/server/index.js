@@ -14,6 +14,7 @@ app.get('/seats', (req, res) => {
     return res.json({ message: 'No seats available' });
   }
   res.json(seats);
+  console.log('sent seats to client');
 });
 
 app.put('/seats/:id', (req, res) => {
@@ -26,7 +27,7 @@ app.put('/seats/:id', (req, res) => {
 
   // Write updated data back to db.json
   fs.writeFileSync('db.json', JSON.stringify(seats, null, 2));
-
+  console.log('Updated availability for seat: '  + seat.id + ' to ' + seat.seatAvailable);
   res.json(seat);
 });
 
