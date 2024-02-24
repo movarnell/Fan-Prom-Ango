@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import { Button, Card} from 'react-bootstrap';
+import { Button, Card, Col, Container, Row} from 'react-bootstrap';
 import DisabledSVG from '../Components/DisabledSVG';
 
 const DevTools = ({seats, updateSeats, setIsLoading, isLoading}) => {
@@ -105,9 +105,10 @@ const makeSeatUnavailable = (description) => {
   
 
 return (
-<>
-    
-    
+
+    <Container fluid className='bg-dark fade-in'>
+    <Row className='justify-content-center'>
+        <Col>
         <Card className='mb-3'>
           <Card.Body>
             <Card.Title>Make all seats available</Card.Title>
@@ -115,9 +116,9 @@ return (
             <Button onClick={makeSeatsAvailable}>Make all seats available</Button>
           </Card.Body>
         </Card>
-     
+        </Col>
 
-      
+        <Col>
         <Card className='mb-3'>
           <Card.Body>
             <Card.Title>Make all seats unavailable</Card.Title>
@@ -125,8 +126,10 @@ return (
              <Button onClick={makeSeatsUnavailable}>Make all seats unavailable</Button>
           </Card.Body>
         </Card>
-    
-       
+        </Col>
+    </Row>
+    <Row className='justify-content-center'>
+        <Col>   
             <Card className='mb-3'>
             <Card.Body>
                 <Card.Title>Make a seat disabled <DisabledSVG/></Card.Title>
@@ -135,9 +138,10 @@ return (
                 <Button onClick={() => makeSeatDisabled(userInput1)}>Make seat disabled</Button>
             </Card.Body>
             </Card>
-      
+        </Col>
+    
 
-       
+            <Col>
             <Card className='mb-3'>
             <Card.Body>
                 <Card.Title>Make a seat not disabled <DisabledSVG/></Card.Title>
@@ -146,9 +150,11 @@ return (
                 <Button onClick={() => makeSeatNotDisabled(userInput2)}>Make seat not disabled</Button>
             </Card.Body>
             </Card>
-       
+            </Col>
+    </Row>
 
-     
+     <Row className='justify-content-center'>
+        <Col>
             <Card className='mb-3'>
             <Card.Body>
                 <Card.Title>Make a seat available</Card.Title>
@@ -157,9 +163,9 @@ return (
                 <Button onClick={() => makeSeatAvailable(userInput3)}>Make seat available</Button>
             </Card.Body>
             </Card>
-     
+        </Col>
 
-     
+        <Col>
             <Card className='mb-3'>
             <Card.Body>
                 <Card.Title>Make a seat unavailable</Card.Title>
@@ -167,11 +173,11 @@ return (
                 <input type='text' placeholder='Seat("A3", "B4", etc)' value={userInput4} onChange={(e) => setUserInput4(e.target.value)} />
                 <Button onClick={() => makeSeatUnavailable(userInput4)}>Make seat unavailable</Button>
             </Card.Body>
-            </Card>
-     
-
-    
-</>
+             </Card>
+        </Col>
+    </Row>
+    </Container>   
+ 
   );
 }
 

@@ -1,32 +1,16 @@
-import { Col, Button, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import Loading from '../Components/Loading';
 import DisabledSVG from '../Components/DisabledSVG';
 import SeatRow from '../Components/SeatRow';
-import { useEffect, useState } from 'react';
-import CartTimer from '../Components/CartTimer';
 import { Link } from 'react-router-dom';
 
-function Seat({seats, setSeats , updateSeats, cart, setCart, isLoading, cartTimer, setCartTimer, timerRunning, setTimerRunning}) {
+function Seat({seats, setSeats, cart, setCart, isLoading, setCartTimer, timerRunning, setTimerRunning}) {
 
 
 
 
 
-useEffect(() => {
-  const timerInterval = setInterval(() => {
-    if (timerRunning) {
-      setCartTimer((prev) => prev + 1);
-      console.log('line 18 set' + cartTimer);
-    }
-    if (cartTimer === 300) {
-      setTimerRunning(false);
-      setCart([]);
-      setCartTimer(0);
-    }
-  }, 1000);
 
-  return () => clearInterval(timerInterval); // this will clear the interval when the component unmounts
-}, [cartTimer, timerRunning, setCart]); // dependencies of the useEffect hook
 
 
   // NOTE The following code is used to filter the seats into rows. We have used the filter method to filter the seats
@@ -72,14 +56,14 @@ useEffect(() => {
 const isSeatInCart = (seat) => cart.some((cartSeat) => cartSeat.id === seat.id);
 // INFO we have added the grid of seats to the Seat component. We have also added the onClick event to the seats. We will use this to select the seats. We will also add the logic to select the seats in the next step.
 
-// FIXME We haven't finished the timer logic and showing the timer when running. We will add this in the next step.
+
   return (
-    <Col className='align-items-center justify-items-center'>
+    <Col className='align-items-center justify-items-center fade-in'>
       <Row>
         <h2 className='text-light'>Total: ${cart.reduce((acc, seat) => acc + seat.seatPrice, 0).toFixed(2)}
-          <Link className="btn btn-success ms-4" to='/checkout'>
+          {cart.length>0 && <Link className="btn btn-success ms-4 fade-in" to='/checkout'>
             Ready to Purchase
-          </Link>
+          </Link>}
           
         </h2>
         
@@ -100,7 +84,7 @@ const isSeatInCart = (seat) => cart.some((cartSeat) => cartSeat.id === seat.id);
           </h4>
         }
         <hr className='text-light'/>
-{timerRunning && (<CartTimer timer={cartTimer} />)}
+
         
 
         
