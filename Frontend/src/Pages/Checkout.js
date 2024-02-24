@@ -1,9 +1,8 @@
 import React from 'react';
 import { Button, Container, Row, Col, ListGroup, Form } from 'react-bootstrap';
 import DisabledSVG from '../Components/DisabledSVG';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { useHistory } from 'react-router-dom';
-const Checkout = ({ cart, isLoading, setIsLoading, setTimerRunning, setCartTimer, updateSeats, setCart }) => {
+const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart }) => {
   const finalPurchase = (e) => {
     setTimerRunning(false);
     e.preventDefault();
@@ -47,12 +46,15 @@ const Checkout = ({ cart, isLoading, setIsLoading, setTimerRunning, setCartTimer
                     <Button variant="danger" onClick={() => {
                       const newCart = cart.filter((c) => c.id !== seat.id);
                       setCart(newCart);
-                      if (newCart.length === 0) {
-                        setTimerRunning(false);
-                        setCartTimer(0);
-
-                      }
-                    }}>Remove</Button> : <Link className='btn btn-warning' to='/'>Remove</Link>}
+                    }}>Remove</Button> : 
+                    <Button variant="danger" onClick={() => {
+                      const newCart = cart.filter((c) => c.id !== seat.id);
+                      setCart(newCart);
+                      setTimerRunning(false);
+                      setCartTimer(0);
+                      redirect();
+                      
+                    }}>Remove</Button>}
                   </Col>
                 </Row>
               </ListGroup.Item>

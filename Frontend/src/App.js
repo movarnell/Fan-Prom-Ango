@@ -9,6 +9,7 @@ import DevTools from "./Pages/DevTools";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Checkout from "./Pages/Checkout";
 import { Container } from "react-bootstrap";
+import Footer from "./Components/Footer";
 function App() {
   const [seats, setSeats] = useState([]);
   const [totalSales, setTotalSales] = useState(0);
@@ -95,7 +96,7 @@ console.log(seats);
           
       </div>
     
-    
+      <Footer/>
     </Container>
     </Router> 
   );
