@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Container, Row, Col, ListGroup, Form } from 'react-bootstrap';
 import DisabledSVG from '../Components/DisabledSVG';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { useHistory } from 'react-router-dom';
 const Checkout = ({ cart, isLoading, setIsLoading, setTimerRunning, setCartTimer, updateSeats, setCart }) => {
   const finalPurchase = (e) => {
     setTimerRunning(false);
@@ -15,7 +16,15 @@ const Checkout = ({ cart, isLoading, setIsLoading, setTimerRunning, setCartTimer
         setCart([]);
       });
     }
+    redirect();
   };
+
+  const history = useHistory();
+  
+  const redirect = () =>{ 
+    let path = `/`; 
+    history.push(path);
+  }
 
   return (
     <Container fluid className='text-light fade-in'>
@@ -73,7 +82,7 @@ const Checkout = ({ cart, isLoading, setIsLoading, setTimerRunning, setCartTimer
           </Form>
           
         </Col>
-        <Button className='mt-3' variant="success" onClick={finalPurchase}>Purchase</Button>
+        <Button className='mt-3 mb-5' variant="success" onClick={finalPurchase}>Purchase</Button>
       </Row>
     </Container>
   );
