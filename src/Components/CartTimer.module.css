@@ -1,26 +1,38 @@
 .cartTimerOrange{
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 1.5em;
-   background-color: #cf8f06;
-   border-radius: 5px;
+    height: fit-content;
+    background-color: #cf8f06;
+    border-radius: 5px;
     padding-inline:  0.5rem;
     animation: fadeIn 0.5s ease-in-out;
     overflow: hidden;
     box-shadow: 0px 5px 5px 0px #1313139f;
+    width: fit-content;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
 }
 
 .cartTimerRed{
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 1.5em;
-    background-color: #a51b1b;
+    height: fit-content;
+    background-color: #cf0606;
     border-radius: 5px;
     padding-inline:  0.5rem;
+    animation: shadowPulse 1s linear infinite;
     overflow: hidden;
-    animation: shadowPulse 1s ease-in-out infinite;
+    box-shadow: 0px 5px 5px 0px #1313139f;
+    width: fit-content;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .cartTimerOrange p{
@@ -35,11 +47,15 @@
 @keyframes fadeIn{
     0%{
         opacity: 0;
-        width: 20%;
+        top: 0px;
+    }
+    80%{
+        opacity: 1;
+        top: 85px;
     }
     100%{
-        width: 100%;
         opacity: 1;
+        top: 80px;
     }
 }
 

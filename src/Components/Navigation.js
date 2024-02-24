@@ -8,7 +8,7 @@ function Navigation() {
   return (
     <Navbar sticky='top' expand='lg' className='bg-dark' data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href='/'><img src={Logo} alt="Fan-Prom-Ango logo" width="40px" height="auto"></img></Navbar.Brand>
+        <Link to='/' className='navbar navbar-brand'><img src={Logo} alt="Fan-Prom-Ango logo" width="40px" height="auto"></img></Link>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='me-auto'>

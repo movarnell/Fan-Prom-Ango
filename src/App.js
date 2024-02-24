@@ -2,25 +2,46 @@ import "./App.css";
 import Header from "./Components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./Components/Navigation";
+import CartTimer from "./Components/CartTimer";
 import { useEffect, useState } from "react";
 import Seat from "./Pages/Seat";
 import DevTools from "./Pages/DevTools";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
+import Checkout from "./Pages/Checkout";
+import { Container } from "react-bootstrap";
 function App() {
   const [seats, setSeats] = useState([]);
   const [totalSales, setTotalSales] = useState(0);
   const [cart, setCart] = useState([]);
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
+  const [cartTimer, setCartTimer] = useState(0);
+  const [timerRunning, setTimerRunning] = useState(false);
   const URL = "https://65bc1cf852189914b5bd9bf1.mockapi.io/seats/";
-  
-  
+  // const URL = "http://localhost:3001/seats";
+
 
   useEffect(() => {
     setIsLoading(true);
     getSeats();
-    
   }, []);
+
+  useEffect(() => {
+    const timerLogic = () => {
+      if (timerRunning) {
+        setCartTimer((prev) => prev + 1);
+        console.log('line 18 set' + cartTimer);
+      }
+      if (cartTimer === 300) {
+        setTimerRunning(false);
+        setCart([]);
+        setCartTimer(0);
+      }
+    };
+  
+    const timerInterval = setInterval(timerLogic, 1000);
+  
+    return () => clearInterval(timerInterval); // this will clear the interval when the component unmounts
+  }, [cartTimer, timerRunning, setCart, setCartTimer, setTimerRunning]); // dependencies of the useEffect hook
 
   const getSeats = async () => {
     setIsLoading(true);
@@ -55,25 +76,29 @@ function App() {
 console.log(seats);
 
 
-  return (<div className='container-fluid bg-dark'>
-  <Router>
+  return (<Router>
+  <Container fluid className="bg-dark min-vh-100">
+  
     
       <Navigation />
       <Header />
-      
+      {timerRunning && (<CartTimer timer={cartTimer} />)}
       <div className='container'>
         
        
           <Switch>
-            <Route exact path='/' render={() => <Seat seats={seats} setSeats={setSeats} updateSeats={updateSeats} cart={cart} setCart={setCart} isLoading={isLoading}/>} />
-            <Route path='/devtools' render={() => <DevTools seats={seats} updateSeats={updateSeats} setIsLoading={setIsLoading} loading={isLoading}/>} />
+            <Route exact path='/' render={() => <Seat seats={seats} setSeats={setSeats} cart={cart} setCart={setCart} isLoading={isLoading} setCartTimer={setCartTimer} timerRunning={timerRunning} setTimerRunning={setTimerRunning}/>} />
+            <Route path='/devtools' render={() => <DevTools seats={seats} updateSeats={updateSeats} setIsLoading={setIsLoading} isLoading={isLoading}/>} />
+            <Route path='/checkout' render={() => <Checkout cart={cart} setCart={setCart} isLoading={isLoading} setIsLoading={setIsLoading} cartTimer={cartTimer} setCartTimer={setCartTimer} setTimerRunning={setTimerRunning} updateSeats={updateSeats} />} />
           </Switch>
        
           
           
       </div>
     
-    </Router></div> 
+    
+    </Container>
+    </Router> 
   );
 }
 
