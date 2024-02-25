@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Container, Row, Col, ListGroup, Form } from 'react-bootstrap';
 import DisabledSVG from '../Components/DisabledSVG';
 import { useHistory } from 'react-router-dom';
-const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart }) => {
+const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart, movieID, theaterID}) => {
   const finalPurchase = (e) => {
     setTimerRunning(false);
     e.preventDefault();
@@ -10,7 +10,7 @@ const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart })
       alert("Please select a seat");
     } else if (cart.length > 0) {
       cart.forEach((seat) => {
-        seat.seatAvailable = false;
+        seat.theaters[theaterID - 1].movies[movieID - 1].seatAvailable = false;
         updateSeats(seat);
         setCart([]);
       });
@@ -37,9 +37,9 @@ const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart })
               <ListGroup.Item key={index}>
                 <Row>
                   <Col sm={8}>
-                    <span><strong>Seat {seat.seatDescription} </strong>{seat.disabled && [<DisabledSVG/>, <br/>, '(Handicap Accessible)']}</span>
+                    <span><strong>Seat {seat.seatDescription} </strong>{seat.theaters[theaterID - 1].movies[movieID - 1].disabled && [<DisabledSVG/>, <br/>, '(Handicap Accessible)']}</span>
                     <br />
-                    <span>Price: ${seat.seatPrice.toFixed(2)}</span>
+                    <span>Price: ${seat.theaters[theaterID - 1].movies[movieID - 1].seatPrice.toFixed(2)}</span>
                   </Col>
                   <Col sm={4}>
                     {cart.length > 1 ?
@@ -62,7 +62,7 @@ const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart })
           </ListGroup>
           <Row className="my-3">
             <Col>
-              <h4>Total: ${cart.reduce((acc, seat) => acc + seat.seatPrice, 0).toFixed(2)}</h4>
+              <h4>Total: ${cart.reduce((acc, seat) => acc + seat.theaters[theaterID - 1].movies[movieID - 1].seatPrice, 0).toFixed(2)}</h4>
             </Col>
           </Row>
         </Col>

@@ -4,7 +4,7 @@ import DisabledSVG from '../Components/DisabledSVG';
 import SeatRow from '../Components/SeatRow';
 import { Link } from 'react-router-dom';
 
-function Seat({seats, setSeats, cart, setCart, isLoading, setCartTimer, timerRunning, setTimerRunning}) {
+function Seat({seats, setSeats, cart, setCart, isLoading, setCartTimer, timerRunning, setTimerRunning, movieID, theaterID}) {
 
 
 
@@ -28,7 +28,7 @@ function Seat({seats, setSeats, cart, setCart, isLoading, setCartTimer, timerRun
       
      
       
-      if(seat.seatAvailable && !isSeatInCart(seat)){ //if - seat is available, and not in cart -  add to cart
+      if(seat.theaters[theaterID - 1].movies[movieID - 1].seatAvailable && !isSeatInCart(seat)){ //if - seat is available, and not in cart -  add to cart
         setCart([...cart, seat]);
         if(!timerRunning) {
           setTimerRunning(true);
@@ -60,7 +60,7 @@ const isSeatInCart = (seat) => cart.some((cartSeat) => cartSeat.id === seat.id);
   return (
     <Col className='align-items-center justify-items-center fade-in'>
       <Row>
-        <h2 className='text-light'>Total: ${cart.reduce((acc, seat) => acc + seat.seatPrice, 0).toFixed(2)}
+        <h2 className='text-light'>Total: ${cart.reduce((acc, seat) => acc + seat.theaters[theaterID - 1].movies[movieID - 1].seatPrice, 0).toFixed(2)}
           {cart.length>0 && <Link className="btn btn-success ms-4 fade-in" to='/checkout'>
             Ready to Purchase
           </Link>}
@@ -71,7 +71,7 @@ const isSeatInCart = (seat) => cart.some((cartSeat) => cartSeat.id === seat.id);
           <h4 className='text-light'>You have selected the following seat(s): {cart &&
             cart.map(
                 (ticket) =>
-                ticket.disabled
+                ticket.theaters[theaterID - 1].movies[movieID - 1].disabled
                 ? [<span key={ticket.id}>{ticket.seatDescription + ' '}</span>, <DisabledSVG key={`${ticket.id}-disabled`} />, ", "]
                 : <span key={ticket.id}>{ticket.seatDescription + ', '}</span>
              )}
@@ -90,10 +90,10 @@ const isSeatInCart = (seat) => cart.some((cartSeat) => cartSeat.id === seat.id);
         
         
       </Row>
-      <SeatRow row={rowA} isSeatInCart={isSeatInCart} handleSeatClick={handleSeatClick} isLoading={isLoading} Loading={Loading}/>
-      <SeatRow row={rowB} isSeatInCart={isSeatInCart} handleSeatClick={handleSeatClick} isLoading={isLoading} Loading={Loading}/>
-      <SeatRow row={rowC} isSeatInCart={isSeatInCart} handleSeatClick={handleSeatClick} isLoading={isLoading} Loading={Loading}/>
-      <SeatRow row={rowD} isSeatInCart={isSeatInCart} handleSeatClick={handleSeatClick} isLoading={isLoading} Loading={Loading}/>
+      <SeatRow row={rowA} isSeatInCart={isSeatInCart} handleSeatClick={handleSeatClick} isLoading={isLoading} Loading={Loading} movieID={movieID} theaterID={theaterID}/>
+      <SeatRow row={rowB} isSeatInCart={isSeatInCart} handleSeatClick={handleSeatClick} isLoading={isLoading} Loading={Loading} movieID={movieID} theaterID={theaterID}/>
+      <SeatRow row={rowC} isSeatInCart={isSeatInCart} handleSeatClick={handleSeatClick} isLoading={isLoading} Loading={Loading} movieID={movieID} theaterID={theaterID}/>
+      <SeatRow row={rowD} isSeatInCart={isSeatInCart} handleSeatClick={handleSeatClick} isLoading={isLoading} Loading={Loading} movieID={movieID} theaterID={theaterID}/>
     </Col>
   );
 }

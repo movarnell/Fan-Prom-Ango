@@ -13,14 +13,14 @@ function Navigation() {
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='me-auto'>
             <Link to="/" className='nav-link'>Home</Link>
-            <Link to="/DevTools" className='nav-link'>DevTools</Link>
+            
             <NavDropdown title='Movies' id='basic-nav-dropdown'>
               <NavDropdown.Item href='/Movies'>Browse Movies</NavDropdown.Item>
-              <NavDropdown.Item href='#action/3.2'>
-                Another action
+              <NavDropdown.Item href='/Theaters'>
+                Browse Theaters
               </NavDropdown.Item>
-              <NavDropdown.Item href='#action/3.3'>Something</NavDropdown.Item>
             </NavDropdown>
+            <Link to="/DevTools" className='nav-link'>DevTools</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

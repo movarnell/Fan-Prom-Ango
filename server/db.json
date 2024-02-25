@@ -1,142 +1,1742 @@
 [
   {
     "seatDescription": "A1",
-    "seatAvailable": true,
-    "seatPrice": 5.99,
-    "disabled": false,
-    "id": "1"
+    "id": "1",
+    "theaters": [
+      {
+        "theaterName": "Promineo Cinema",
+        "theaterId": "1",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": true
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Local Hometown Theater",
+        "theaterId": "2",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Awesome Stage",
+        "theaterId": "3",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "seatDescription": "A2",
-    "seatAvailable": true,
-    "seatPrice": 5.99,
-    "disabled": false,
-    "id": "2"
+    "id": "2",
+    "theaters": [
+      {
+        "theaterName": "Promineo Cinema",
+        "theaterId": "1",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Local Hometown Theater",
+        "theaterId": "2",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Awesome Stage",
+        "theaterId": "3",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "seatDescription": "A3",
-    "seatAvailable": true,
-    "seatPrice": 5.99,
-    "disabled": false,
-    "id": "3"
+    "id": "3",
+    "theaters": [
+      {
+        "theaterName": "Promineo Cinema",
+        "theaterId": "1",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Local Hometown Theater",
+        "theaterId": "2",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Awesome Stage",
+        "theaterId": "3",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "seatDescription": "A4",
-    "seatAvailable": true,
-    "seatPrice": 5.99,
-    "disabled": false,
-    "id": "4"
+    "id": "4",
+    "theaters": [
+      {
+        "theaterName": "Promineo Cinema",
+        "theaterId": "1",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Local Hometown Theater",
+        "theaterId": "2",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Awesome Stage",
+        "theaterId": "3",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "seatDescription": "A5",
-    "seatAvailable": true,
-    "seatPrice": 5.99,
-    "disabled": true,
-    "id": "5"
+    "id": "5",
+    "theaters": [
+      {
+        "theaterName": "Promineo Cinema",
+        "theaterId": "1",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": true
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Local Hometown Theater",
+        "theaterId": "2",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Awesome Stage",
+        "theaterId": "3",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "seatDescription": "B1",
-    "seatAvailable": true,
-    "seatPrice": 5.99,
-    "disabled": false,
-    "id": "6"
+    "id": "6",
+    "theaters": [
+      {
+        "theaterName": "Promineo Cinema",
+        "theaterId": "1",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": true
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Local Hometown Theater",
+        "theaterId": "2",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Awesome Stage",
+        "theaterId": "3",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "seatDescription": "B2",
-    "seatAvailable": true,
-    "seatPrice": 5.99,
-    "disabled": false,
-    "id": "7"
+    "id": "7",
+    "theaters": [
+      {
+        "theaterName": "Promineo Cinema",
+        "theaterId": "1",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Local Hometown Theater",
+        "theaterId": "2",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Awesome Stage",
+        "theaterId": "3",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "seatDescription": "B3",
-    "seatAvailable": true,
-    "seatPrice": 5.99,
-    "disabled": false,
-    "id": "8"
+    "id": "8",
+    "theaters": [
+      {
+        "theaterName": "Promineo Cinema",
+        "theaterId": "1",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Local Hometown Theater",
+        "theaterId": "2",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Awesome Stage",
+        "theaterId": "3",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "seatDescription": "B4",
-    "seatAvailable": true,
-    "seatPrice": 5.99,
-    "disabled": false,
-    "id": "9"
+    "id": "9",
+    "theaters": [
+      {
+        "theaterName": "Promineo Cinema",
+        "theaterId": "1",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Local Hometown Theater",
+        "theaterId": "2",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Awesome Stage",
+        "theaterId": "3",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "seatDescription": "B5",
-    "seatAvailable": true,
-    "seatPrice": 5.99,
-    "disabled": true,
-    "id": "10"
+    "id": "10",
+    "theaters": [
+      {
+        "theaterName": "Promineo Cinema",
+        "theaterId": "1",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": true
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Local Hometown Theater",
+        "theaterId": "2",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Awesome Stage",
+        "theaterId": "3",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "seatDescription": "C1",
-    "seatAvailable": true,
-    "seatPrice": 5.99,
-    "disabled": false,
-    "id": "11"
+    "id": "11",
+    "theaters": [
+      {
+        "theaterName": "Promineo Cinema",
+        "theaterId": "1",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": true
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Local Hometown Theater",
+        "theaterId": "2",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Awesome Stage",
+        "theaterId": "3",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "seatDescription": "C2",
-    "seatAvailable": true,
-    "seatPrice": 5.99,
-    "disabled": false,
-    "id": "12"
+    "id": "12",
+    "theaters": [
+      {
+        "theaterName": "Promineo Cinema",
+        "theaterId": "1",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Local Hometown Theater",
+        "theaterId": "2",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Awesome Stage",
+        "theaterId": "3",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "seatDescription": "C3",
-    "seatAvailable": true,
-    "seatPrice": 5.99,
-    "disabled": false,
-    "id": "13"
+    "id": "13",
+    "theaters": [
+      {
+        "theaterName": "Promineo Cinema",
+        "theaterId": "1",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Local Hometown Theater",
+        "theaterId": "2",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Awesome Stage",
+        "theaterId": "3",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "seatDescription": "C4",
-    "seatAvailable": true,
-    "seatPrice": 5.99,
-    "disabled": false,
-    "id": "14"
+    "id": "14",
+    "theaters": [
+      {
+        "theaterName": "Promineo Cinema",
+        "theaterId": "1",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Local Hometown Theater",
+        "theaterId": "2",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Awesome Stage",
+        "theaterId": "3",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "seatDescription": "C5",
-    "seatAvailable": true,
-    "seatPrice": 5.99,
-    "disabled": true,
-    "id": "15"
+    "id": "15",
+    "theaters": [
+      {
+        "theaterName": "Promineo Cinema",
+        "theaterId": "1",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": true
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Local Hometown Theater",
+        "theaterId": "2",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Awesome Stage",
+        "theaterId": "3",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "seatDescription": "D1",
-    "seatAvailable": true,
-    "seatPrice": 5.99,
-    "disabled": false,
-    "id": "16"
+    "id": "16",
+    "theaters": [
+      {
+        "theaterName": "Promineo Cinema",
+        "theaterId": "1",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": true
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Local Hometown Theater",
+        "theaterId": "2",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Awesome Stage",
+        "theaterId": "3",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "seatDescription": "D2",
-    "seatAvailable": true,
-    "seatPrice": 5.99,
-    "disabled": false,
-    "id": "17"
+    "id": "17",
+    "theaters": [
+      {
+        "theaterName": "Promineo Cinema",
+        "theaterId": "1",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Local Hometown Theater",
+        "theaterId": "2",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Awesome Stage",
+        "theaterId": "3",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "seatDescription": "D3",
-    "seatAvailable": true,
-    "seatPrice": 5.99,
-    "disabled": false,
-    "id": "18"
+    "id": "18",
+    "theaters": [
+      {
+        "theaterName": "Promineo Cinema",
+        "theaterId": "1",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Local Hometown Theater",
+        "theaterId": "2",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Awesome Stage",
+        "theaterId": "3",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "seatDescription": "D4",
-    "seatAvailable": true,
-    "seatPrice": 5.99,
-    "disabled": false,
-    "id": "19"
+    "id": "19",
+    "theaters": [
+      {
+        "theaterName": "Promineo Cinema",
+        "theaterId": "1",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Local Hometown Theater",
+        "theaterId": "2",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Awesome Stage",
+        "theaterId": "3",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      }
+    ]
   },
   {
     "seatDescription": "D5",
-    "seatAvailable": true,
-    "seatPrice": 5.99,
-    "disabled": true,
-    "id": "20"
+    "id": "20",
+    "theaters": [
+      {
+        "theaterName": "Promineo Cinema",
+        "theaterId": "1",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": true
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Local Hometown Theater",
+        "theaterId": "2",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      },
+      {
+        "theaterName": "Awesome Stage",
+        "theaterId": "3",
+        "movies": [
+          {
+            "movieName": "Avatar",
+            "movieId": "1",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Shawshank Redemption",
+            "movieId": "2",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          },
+          {
+            "movieName": "Wonder Woman",
+            "movieId": "3",
+            "seatAvailable": true,
+            "seatPrice": 5.99,
+            "disabled": false
+          }
+        ]
+      }
+    ]
   }
 ]
