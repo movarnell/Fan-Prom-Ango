@@ -19,14 +19,14 @@
             "movieId": "2",
             "seatAvailable": true,
             "seatPrice": 5.99,
-            "disabled": false
+            "disabled": true
           },
           {
             "movieName": "Wonder Woman",
             "movieId": "3",
             "seatAvailable": true,
             "seatPrice": 5.99,
-            "disabled": false
+            "disabled": true
           }
         ]
       },
@@ -278,7 +278,7 @@
           {
             "movieName": "Shawshank Redemption",
             "movieId": "2",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 5.99,
             "disabled": false
           },
@@ -365,16 +365,16 @@
           {
             "movieName": "Shawshank Redemption",
             "movieId": "2",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 5.99,
-            "disabled": false
+            "disabled": true
           },
           {
             "movieName": "Wonder Woman",
             "movieId": "3",
             "seatAvailable": true,
             "seatPrice": 5.99,
-            "disabled": false
+            "disabled": true
           }
         ]
       },
@@ -454,14 +454,14 @@
             "movieId": "2",
             "seatAvailable": true,
             "seatPrice": 5.99,
-            "disabled": false
+            "disabled": true
           },
           {
             "movieName": "Wonder Woman",
             "movieId": "3",
             "seatAvailable": true,
             "seatPrice": 5.99,
-            "disabled": false
+            "disabled": true
           }
         ]
       },
@@ -802,14 +802,14 @@
             "movieId": "2",
             "seatAvailable": true,
             "seatPrice": 5.99,
-            "disabled": false
+            "disabled": true
           },
           {
             "movieName": "Wonder Woman",
             "movieId": "3",
             "seatAvailable": true,
             "seatPrice": 5.99,
-            "disabled": false
+            "disabled": true
           }
         ]
       },
@@ -889,14 +889,14 @@
             "movieId": "2",
             "seatAvailable": true,
             "seatPrice": 5.99,
-            "disabled": false
+            "disabled": true
           },
           {
             "movieName": "Wonder Woman",
             "movieId": "3",
             "seatAvailable": true,
             "seatPrice": 5.99,
-            "disabled": false
+            "disabled": true
           }
         ]
       },
@@ -1237,14 +1237,14 @@
             "movieId": "2",
             "seatAvailable": true,
             "seatPrice": 5.99,
-            "disabled": false
+            "disabled": true
           },
           {
             "movieName": "Wonder Woman",
             "movieId": "3",
             "seatAvailable": true,
             "seatPrice": 5.99,
-            "disabled": false
+            "disabled": true
           }
         ]
       },
@@ -1324,14 +1324,14 @@
             "movieId": "2",
             "seatAvailable": true,
             "seatPrice": 5.99,
-            "disabled": false
+            "disabled": true
           },
           {
             "movieName": "Wonder Woman",
             "movieId": "3",
             "seatAvailable": true,
             "seatPrice": 5.99,
-            "disabled": false
+            "disabled": true
           }
         ]
       },
@@ -1670,9 +1670,9 @@
           {
             "movieName": "Shawshank Redemption",
             "movieId": "2",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 5.99,
-            "disabled": false
+            "disabled": true
           },
           {
             "movieName": "Wonder Woman",
@@ -1726,7 +1726,7 @@
             "movieId": "2",
             "seatAvailable": true,
             "seatPrice": 5.99,
-            "disabled": false
+            "disabled": true
           },
           {
             "movieName": "Wonder Woman",

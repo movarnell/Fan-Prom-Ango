@@ -97,7 +97,7 @@ console.log(seats);
             <Route exact path='/' render={() => <Home/>} />
             <Route path='/devtools' render={() => <DevTools seats={seats} updateSeats={updateSeats} setIsLoading={setIsLoading} isLoading={isLoading}/>} />
             <Route path='/checkout' render={() => <Checkout cart={cart} setCart={setCart} isLoading={isLoading} setIsLoading={setIsLoading} cartTimer={cartTimer} setCartTimer={setCartTimer} setTimerRunning={setTimerRunning} updateSeats={updateSeats} movieID={movieID} theaterID={theaterID}/>} />
-            <Route path='/seat' render={() => <Seat seats={seats} setSeats={setSeats} cart={cart} setCart={setCart} isLoading={isLoading} setCartTimer={setCartTimer} timerRunning={timerRunning} setTimerRunning={setTimerRunning} movieID={movieID} theaterID={theaterID} />} />
+            <Route path='/seat' render={() => <Seat seats={seats} setSeats={setSeats} cart={cart} setCart={setCart} isLoading={isLoading} setCartTimer={setCartTimer} timerRunning={timerRunning} setTimerRunning={setTimerRunning} movieID={movieID} theaterID={theaterID} theaters={theaters} movies={movies} />} />
             <Route path='/movies' render={() => <Movies theaterID={theaterID} setMovieID={setMovieID} movies={movies} theaters={theaters}/>} />
             <Route path='/theaters' render={() => <Theaters movieID={movieID} setTheaterID={setTheaterID} theaters={theaters} movies={movies}/>} />
           </Switch>

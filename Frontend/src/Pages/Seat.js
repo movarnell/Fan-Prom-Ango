@@ -4,7 +4,7 @@ import DisabledSVG from '../Components/DisabledSVG';
 import SeatRow from '../Components/SeatRow';
 import { Link } from 'react-router-dom';
 
-function Seat({seats, setSeats, cart, setCart, isLoading, setCartTimer, timerRunning, setTimerRunning, movieID, theaterID}) {
+function Seat({seats, setSeats, cart, setCart, isLoading, setCartTimer, timerRunning, setTimerRunning, movieID, theaterID, theaters, movies}) {
 
 
 
@@ -84,11 +84,12 @@ const isSeatInCart = (seat) => cart.some((cartSeat) => cartSeat.id === seat.id);
           </h4>
         }
         <hr className='text-light'/>
+</Row>
 
-        
-
-        
-        
+      <Row>
+        <h2 className='text-light'>
+        Showing seats for {movies[movieID - 1]?.title || 'your movie'} at {theaters[theaterID - 1]?.name || 'your theater'}
+        </h2>
       </Row>
       <SeatRow row={rowA} isSeatInCart={isSeatInCart} handleSeatClick={handleSeatClick} isLoading={isLoading} Loading={Loading} movieID={movieID} theaterID={theaterID}/>
       <SeatRow row={rowB} isSeatInCart={isSeatInCart} handleSeatClick={handleSeatClick} isLoading={isLoading} Loading={Loading} movieID={movieID} theaterID={theaterID}/>

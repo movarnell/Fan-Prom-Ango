@@ -19,7 +19,7 @@ function SeatRow({ row, isSeatInCart, handleSeatClick, isLoading, Loading, movie
           }
           onClick={(e) => handleSeatClick(e, seat)}
         >
-          {seat.seatDescription}
+          {seat.seatDescription + ' $'}{seat.theaters[theaterID - 1]?.movies[movieID - 1]?.seatAvailable && seat.theaters[theaterID - 1]?.movies[movieID - 1]?.seatPrice}
         </div>
       ))}
     </Row>
