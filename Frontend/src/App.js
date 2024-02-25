@@ -13,6 +13,7 @@ import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
 import Movies from "./Pages/Movies";
 import Theaters from "./Pages/Theaters";
+import PurchaseSuccess from "./Pages/PurchaseSuccess";
 function App() {
   const [movieID, setMovieID] = useState(0);
   const [theaterID, setTheaterID] = useState(0);
@@ -100,6 +101,7 @@ console.log(seats);
             <Route path='/seat' render={() => <Seat seats={seats} setSeats={setSeats} cart={cart} setCart={setCart} isLoading={isLoading} setCartTimer={setCartTimer} timerRunning={timerRunning} setTimerRunning={setTimerRunning} movieID={movieID} theaterID={theaterID} theaters={theaters} movies={movies} />} />
             <Route path='/movies' render={() => <Movies theaterID={theaterID} setMovieID={setMovieID} movies={movies} theaters={theaters}/>} />
             <Route path='/theaters' render={() => <Theaters movieID={movieID} setTheaterID={setTheaterID} theaters={theaters} movies={movies}/>} />
+            <Route path='/success' render={() => <PurchaseSuccess/>} />
           </Switch>
        
           

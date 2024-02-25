@@ -90,13 +90,6 @@ const DevTools = ({seats, updateSeats, setIsLoading, isLoading}) => {
         
     };
 
-    const addTheater = (Name, Location, ) => {
-        for (let i = 0; i < seats.length; i++) {
-            seats[i].theaters.push({ name: Name, location: Location, movies: [...seats.theaters[0].movies], id: seats[i].theaters.length + 1 });
-            updateSeats(seats[i]);
-        }
-  
-    };
 return (
 
     <Container fluid className='bg-dark fade-in'>
@@ -245,23 +238,7 @@ return (
             </Card>
         </Col>
         <Col>
-            <Card className='bg-light mb-3'>
-                <Card.Body>
-                    <Card.Title >Add Theater</Card.Title>
-                    <Card.Text>Add a theater to all seats</Card.Text>
-                    <Form>
-                        <Form.Group>
-                            <Form.Label>Name</Form.Label>
-                            <Form.Control type='text' value={userInput1} onChange={(e) => setUserInput1(e.target.value)} placeholder='Name' />
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Location</Form.Label>
-                            <Form.Control type='text' value={userInput2} onChange={(e) => setUserInput2(e.target.value)} placeholder='Location' />
-                        </Form.Group>
-                        <Button variant='primary' onClick={() => addTheater(userInput1, userInput2)}>Add Theater</Button>
-                    </Form>
-                </Card.Body>
-            </Card>
+            
         </Col>
     </Row>
     </Container>   

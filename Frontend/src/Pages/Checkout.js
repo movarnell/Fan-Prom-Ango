@@ -12,16 +12,16 @@ const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart, m
       cart.forEach((seat) => {
         seat.theaters[theaterID - 1].movies[movieID - 1].seatAvailable = false;
         updateSeats(seat);
-        setCart([]);
       });
+      setCart([]);
     }
-    redirect();
+    redirect('/success');
   };
 
   const history = useHistory();
   
-  const redirect = () =>{ 
-    let path = `/`; 
+  const redirect = (path) =>{ 
+    
     history.push(path);
   }
 
@@ -52,7 +52,7 @@ const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart, m
                       setCart(newCart);
                       setTimerRunning(false);
                       setCartTimer(0);
-                      redirect();
+                      redirect('/');
                       
                     }}>Remove</Button>}
                   </Col>

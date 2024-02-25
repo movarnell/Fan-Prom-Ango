@@ -10,7 +10,7 @@
           {
             "movieName": "Avatar",
             "movieId": "1",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 12.99,
             "disabled": true
           },
@@ -44,7 +44,7 @@
           {
             "movieName": "Shawshank Redemption",
             "movieId": "2",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 5.99,
             "disabled": false
           },
@@ -131,7 +131,7 @@
           {
             "movieName": "Shawshank Redemption",
             "movieId": "2",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 5.99,
             "disabled": false
           },
@@ -218,7 +218,7 @@
           {
             "movieName": "Shawshank Redemption",
             "movieId": "2",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 5.99,
             "disabled": false
           },
@@ -305,7 +305,7 @@
           {
             "movieName": "Shawshank Redemption",
             "movieId": "2",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 5.99,
             "disabled": false
           },
@@ -479,7 +479,7 @@
           {
             "movieName": "Shawshank Redemption",
             "movieId": "2",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 5.99,
             "disabled": false
           },
@@ -566,7 +566,7 @@
           {
             "movieName": "Shawshank Redemption",
             "movieId": "2",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 5.99,
             "disabled": false
           },
@@ -653,7 +653,7 @@
           {
             "movieName": "Shawshank Redemption",
             "movieId": "2",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 5.99,
             "disabled": false
           },
@@ -740,7 +740,7 @@
           {
             "movieName": "Shawshank Redemption",
             "movieId": "2",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 5.99,
             "disabled": false
           },
@@ -793,7 +793,7 @@
           {
             "movieName": "Avatar",
             "movieId": "1",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 12.99,
             "disabled": true
           },
@@ -1141,7 +1141,7 @@
           {
             "movieName": "Avatar",
             "movieId": "1",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 12.99,
             "disabled": false
           },
@@ -1228,7 +1228,7 @@
           {
             "movieName": "Avatar",
             "movieId": "1",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 12.99,
             "disabled": true
           },
@@ -1576,7 +1576,7 @@
           {
             "movieName": "Avatar",
             "movieId": "1",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 12.99,
             "disabled": false
           },
@@ -1663,7 +1663,7 @@
           {
             "movieName": "Avatar",
             "movieId": "1",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 12.99,
             "disabled": true
           },
