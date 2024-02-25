@@ -1,5 +1,5 @@
 import React from 'react'
-import { Carousel, Button } from 'react-bootstrap'
+import { Carousel, Button, Image } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom'
 
 const Movies = ({ theaterID, setMovieID, movies, theaters }) => {
@@ -13,15 +13,16 @@ const Movies = ({ theaterID, setMovieID, movies, theaters }) => {
             <h2 className='fade-in text-light'>
                 Now Showing {theaterID > 0 && ['At ', theaters[theaterID - 1].name]}
             </h2>
-            <Carousel className="fade-in">
+            <Carousel className="fade-in rounded">
                 {movies.map((movie, index) => (
                     <Carousel.Item key={index}>
-                        <img
-                            className="d-block w-100"
-                            src={`https:picsum.photos/800/400?random=${index}`}
+                        <Image
+                            className="d-block w-100 rounded"
+                            src={movie.image}
                             alt={movie.title}
+                            style={{height: '500px', objectFit: 'cover'}}
                         />
-                        <Carousel.Caption style={{backgroundColor: 'rgba(0, 0, 0, 0.5)', color: 'white', borderRadius: '5px'}}>
+                        <Carousel.Caption style={{backgroundColor: 'rgba(0, 0, 0, 0.5)', color: 'white', borderRadius: '5px', textOverflow: 'ellipsis'}}>
                             <h3>{movie.title}</h3>
                             <p style={{textOverflow:'ellipsis'}}>{movie.description}</p>
                             {theaterID > 0 ? (
