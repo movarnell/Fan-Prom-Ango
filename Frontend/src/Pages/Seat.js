@@ -60,7 +60,8 @@ const isSeatInCart = (seat) => cart.some((cartSeat) => cartSeat.id === seat.id);
   return (
     <Col className='align-items-center justify-items-center fade-in'>
       <Row>
-        <h2 className='text-light'>Total: ${cart.reduce((acc, seat) => acc + seat.theaters[theaterID - 1].movies[movieID - 1].seatPrice, 0).toFixed(2)}
+        <h2 className='text-light'>Total: $
+         {cart.reduce((acc, seat) => acc + seat?.theaters[theaterID - 1]?.movies[movieID - 1]?.seatPrice || 0, 0).toFixed(2)} 
           {cart.length>0 && <Link className="btn btn-success ms-4 fade-in" to='/checkout'>
             Ready to Purchase
           </Link>}

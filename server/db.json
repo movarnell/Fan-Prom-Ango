@@ -11,7 +11,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": true
           },
           {
@@ -24,7 +24,7 @@
           {
             "movieName": "Wonder Woman",
             "movieId": "3",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 5.99,
             "disabled": true
           }
@@ -38,7 +38,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -65,7 +65,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -98,7 +98,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -111,7 +111,7 @@
           {
             "movieName": "Wonder Woman",
             "movieId": "3",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 5.99,
             "disabled": false
           }
@@ -124,8 +124,8 @@
           {
             "movieName": "Avatar",
             "movieId": "1",
-            "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatAvailable": false,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -152,7 +152,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -185,7 +185,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -198,7 +198,7 @@
           {
             "movieName": "Wonder Woman",
             "movieId": "3",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 5.99,
             "disabled": false
           }
@@ -211,8 +211,8 @@
           {
             "movieName": "Avatar",
             "movieId": "1",
-            "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatAvailable": false,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -239,7 +239,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -272,7 +272,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -285,7 +285,7 @@
           {
             "movieName": "Wonder Woman",
             "movieId": "3",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 5.99,
             "disabled": false
           }
@@ -298,8 +298,8 @@
           {
             "movieName": "Avatar",
             "movieId": "1",
-            "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatAvailable": false,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -326,7 +326,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -359,7 +359,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": true
           },
           {
@@ -372,7 +372,7 @@
           {
             "movieName": "Wonder Woman",
             "movieId": "3",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 5.99,
             "disabled": true
           }
@@ -385,8 +385,8 @@
           {
             "movieName": "Avatar",
             "movieId": "1",
-            "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatAvailable": false,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -413,7 +413,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -446,7 +446,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": true
           },
           {
@@ -473,7 +473,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -500,7 +500,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -533,7 +533,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -560,7 +560,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -587,7 +587,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -620,7 +620,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -647,7 +647,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -674,7 +674,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -707,7 +707,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -734,7 +734,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -761,7 +761,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -794,7 +794,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": true
           },
           {
@@ -821,7 +821,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -848,7 +848,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -881,7 +881,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": true
           },
           {
@@ -908,7 +908,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -935,7 +935,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -968,7 +968,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -995,7 +995,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1022,7 +1022,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1055,7 +1055,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1082,7 +1082,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1109,7 +1109,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1142,7 +1142,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1169,7 +1169,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1196,7 +1196,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1229,7 +1229,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": true
           },
           {
@@ -1256,7 +1256,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1283,7 +1283,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1316,7 +1316,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": true
           },
           {
@@ -1343,7 +1343,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1370,7 +1370,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1403,7 +1403,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1430,7 +1430,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1457,7 +1457,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1490,7 +1490,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1517,7 +1517,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1544,7 +1544,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1577,7 +1577,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1604,7 +1604,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1631,7 +1631,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1664,7 +1664,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": true
           },
           {
@@ -1679,7 +1679,7 @@
             "movieId": "3",
             "seatAvailable": true,
             "seatPrice": 5.99,
-            "disabled": false
+            "disabled": true
           }
         ]
       },
@@ -1691,7 +1691,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {
@@ -1718,7 +1718,7 @@
             "movieName": "Avatar",
             "movieId": "1",
             "seatAvailable": true,
-            "seatPrice": 5.99,
+            "seatPrice": 12.99,
             "disabled": false
           },
           {

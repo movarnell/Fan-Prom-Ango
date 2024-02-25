@@ -80,8 +80,8 @@ const DevTools = ({seats, updateSeats, setIsLoading, isLoading}) => {
         seats.forEach((seat) => {
             seat.theaters.forEach((theater) => {
                 theater.movies.forEach((movie) => {
-                    if (movie.id === movieid) {
-                        movie.seatPrice = price;
+                    if (movie.movieId === movieid) {
+                        movie.seatPrice = parseFloat(price);
                     }
                 });
             });
@@ -89,8 +89,14 @@ const DevTools = ({seats, updateSeats, setIsLoading, isLoading}) => {
         });
         
     };
-  
 
+    const addTheater = (Name, Location, ) => {
+        for (let i = 0; i < seats.length; i++) {
+            seats[i].theaters.push({ name: Name, location: Location, movies: [...seats.theaters[0].movies], id: seats[i].theaters.length + 1 });
+            updateSeats(seats[i]);
+        }
+  
+    };
 return (
 
     <Container fluid className='bg-dark fade-in'>
@@ -218,7 +224,7 @@ return (
         </Col>
     </Row>
     <Row>
-        <Col xl={6}>
+        <Col>
             <Card className='bg-light mb-3'>
                 <Card.Body>
                     <Card.Title >Change Movie Price</Card.Title>
@@ -235,6 +241,25 @@ return (
                         <Button variant='primary' onClick={() => changeMoviePrice(userInput1, userInput2)}>Change Price</Button>
                     </Form>
                     
+                </Card.Body>
+            </Card>
+        </Col>
+        <Col>
+            <Card className='bg-light mb-3'>
+                <Card.Body>
+                    <Card.Title >Add Theater</Card.Title>
+                    <Card.Text>Add a theater to all seats</Card.Text>
+                    <Form>
+                        <Form.Group>
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control type='text' value={userInput1} onChange={(e) => setUserInput1(e.target.value)} placeholder='Name' />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Location</Form.Label>
+                            <Form.Control type='text' value={userInput2} onChange={(e) => setUserInput2(e.target.value)} placeholder='Location' />
+                        </Form.Group>
+                        <Button variant='primary' onClick={() => addTheater(userInput1, userInput2)}>Add Theater</Button>
+                    </Form>
                 </Card.Body>
             </Card>
         </Col>
