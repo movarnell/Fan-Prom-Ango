@@ -90,6 +90,7 @@ const DevTools = ({seats, updateSeats, setIsLoading, isLoading}) => {
         
     };
 
+
 return (
 
     <Container fluid className='bg-dark fade-in'>
@@ -127,15 +128,15 @@ return (
                     <Card.Title >Make Seat Available</Card.Title>
                     <Card.Text>Make a seat available for a specific movie and theater</Card.Text>
                     <Form>
-                        <Form.Group>
+                        <Form.Group className='mb-3'>
                             <Form.Label>Seat Description</Form.Label>
                             <Form.Control type='text' value={userInput1} onChange={(e) => setUserInput1(e.target.value)} placeholder='Seat Description' />
                         </Form.Group>
-                        <Form.Group>
+                        <Form.Group className='mb-3'>
                             <Form.Label>Movie ID</Form.Label>
                             <Form.Control type='text' value={userInput2} onChange={(e) => setUserInput2(e.target.value)} placeholder='Movie ID' />
                         </Form.Group>
-                        <Form.Group>
+                        <Form.Group className='mb-3'>
                             <Form.Label>Theater ID</Form.Label>
                             <Form.Control type='text' value={userInput3} onChange={(e) => setUserInput3(e.target.value)} placeholder='Theater ID' />
                         </Form.Group>
@@ -150,15 +151,15 @@ return (
                     <Card.Title >Make Seat Unavailable</Card.Title>
                     <Card.Text>Make a seat unavailable for a specific movie and theater</Card.Text>
                     <Form>
-                        <Form.Group>
+                        <Form.Group className='mb-3'>
                             <Form.Label>Seat Description</Form.Label>
                             <Form.Control type='text' value={userInput1} onChange={(e) => setUserInput1(e.target.value)} placeholder='Seat Description' />
                         </Form.Group>
-                        <Form.Group>
+                        <Form.Group className='mb-3'>
                             <Form.Label>Movie ID</Form.Label>
                             <Form.Control type='text' value={userInput2} onChange={(e) => setUserInput2(e.target.value)} placeholder='Movie ID' />
                         </Form.Group>
-                        <Form.Group>
+                        <Form.Group className='mb-3'>
                             <Form.Label>Theater ID</Form.Label>
                             <Form.Control type='text' value={userInput3} onChange={(e) => setUserInput3(e.target.value)} placeholder='Theater ID' />
                         </Form.Group>
@@ -175,15 +176,15 @@ return (
                     <Card.Title >Make Seat Disabled<DisabledSVG/></Card.Title>
                     <Card.Text>Make a seat disabled for a specific movie and theater</Card.Text>
                     <Form>
-                        <Form.Group>
+                        <Form.Group className='mb-3'>
                             <Form.Label>Seat Description</Form.Label>
                             <Form.Control type='text' value={userInput1} onChange={(e) => setUserInput1(e.target.value)} placeholder='Seat Description' />
                         </Form.Group>
-                        <Form.Group>
+                        <Form.Group className='mb-3'>
                             <Form.Label>Movie ID</Form.Label>
                             <Form.Control type='text' value={userInput2} onChange={(e) => setUserInput2(e.target.value)} placeholder='Movie ID' />
                         </Form.Group>
-                        <Form.Group>
+                        <Form.Group className='mb-3'>
                             <Form.Label>Theater ID</Form.Label>
                             <Form.Control type='text' value={userInput3} onChange={(e) => setUserInput3(e.target.value)} placeholder='Theater ID' />
                         </Form.Group>
@@ -198,15 +199,15 @@ return (
                     <Card.Title >Make Seat Not Disabled<DisabledSVG/></Card.Title>
                     <Card.Text>Make a seat not disabled for a specific movie and theater</Card.Text>
                     <Form>
-                        <Form.Group>
+                        <Form.Group className='mb-3'>
                             <Form.Label>Seat Description</Form.Label>
                             <Form.Control type='text' value={userInput1} onChange={(e) => setUserInput1(e.target.value)} placeholder='Seat Description' />
                         </Form.Group>
-                        <Form.Group>
+                        <Form.Group className='mb-3'>
                             <Form.Label>Movie ID</Form.Label>
                             <Form.Control type='text' value={userInput2} onChange={(e) => setUserInput2(e.target.value)} placeholder='Movie ID' />
                         </Form.Group>
-                        <Form.Group>
+                        <Form.Group className='mb-3'>
                             <Form.Label>Theater ID</Form.Label>
                             <Form.Control type='text' value={userInput3} onChange={(e) => setUserInput3(e.target.value)} placeholder='Theater ID' />
                         </Form.Group>
@@ -223,11 +224,11 @@ return (
                     <Card.Title >Change Movie Price</Card.Title>
                     <Card.Text>Change the price of a movie</Card.Text>
                     <Form>
-                        <Form.Group>
+                        <Form.Group className='mb-3'>
                             <Form.Label>Movie ID</Form.Label>
                             <Form.Control type='text' value={userInput1} onChange={(e) => setUserInput1(e.target.value)} placeholder='Movie ID' />
                         </Form.Group>
-                        <Form.Group>
+                        <Form.Group className='mb-3'>
                             <Form.Label>New Price</Form.Label>
                             <Form.Control type='text' value={userInput2} onChange={(e) => setUserInput2(e.target.value)} placeholder='New Price' />
                         </Form.Group>
@@ -238,7 +239,7 @@ return (
             </Card>
         </Col>
         <Col>
-            
+        
         </Col>
     </Row>
     </Container>   

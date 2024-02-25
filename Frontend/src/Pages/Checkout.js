@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button, Container, Row, Col, ListGroup, Form } from 'react-bootstrap';
 import DisabledSVG from '../Components/DisabledSVG';
 import { useHistory } from 'react-router-dom';
-const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart, movieID, theaterID}) => {
+
+const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart, movieID, theaterID, movies, theaters}) => {
+useEffect(() => {
+  if(cart.length < 1) {
+    history.go(-1);
+  }
+}, [cart]);
   const finalPurchase = (e) => {
     setTimerRunning(false);
     e.preventDefault();
@@ -27,14 +33,14 @@ const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart, m
 
   return (
     <Container fluid className='text-light fade-in'>
-      <h2>Checkout</h2>
+      <h2>Checkout: {movies[movieID - 1]?.title} - {theaters[theaterID - 1]?.name} </h2>
       <hr />
       <Row>
         <Col>
         <h4>Your Tickets</h4>
           <ListGroup>
             {cart.map((seat, index) => (
-              <ListGroup.Item key={index}>
+              <ListGroup.Item key={index+'cart'}>
                 <Row>
                   <Col sm={8}>
                     <span><strong>Seat {seat.seatDescription} </strong>{seat.theaters[theaterID - 1].movies[movieID - 1].disabled && [<DisabledSVG/>, <br/>, '(Handicap Accessible)']}</span>
@@ -43,16 +49,16 @@ const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart, m
                   </Col>
                   <Col sm={4}>
                     {cart.length > 1 ?
-                    <Button variant="danger" onClick={() => {
+                    <Button variant="danger" className='ml-auto' onClick={() => {
                       const newCart = cart.filter((c) => c.id !== seat.id);
                       setCart(newCart);
                     }}>Remove</Button> : 
-                    <Button variant="danger" onClick={() => {
+                    <Button variant="danger" className='ml-auto' onClick={() => {
                       const newCart = cart.filter((c) => c.id !== seat.id);
                       setCart(newCart);
                       setTimerRunning(false);
                       setCartTimer(0);
-                      redirect('/');
+                      redirect('/seat');
                       
                     }}>Remove</Button>}
                   </Col>

@@ -2,9 +2,12 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import cartsvg from "../Assets/CartLight.svg";
 import Logo from "../Assets/logo.png";
 import { Link } from 'react-router-dom';
-function Navigation() {
+import { Image } from "react-bootstrap";
+
+function Navigation({ cart }) {
   return (
     <Navbar sticky='top' expand='lg' className='bg-dark' data-bs-theme="dark">
       <Container>
@@ -20,8 +23,9 @@ function Navigation() {
                 Browse Theaters
               </NavDropdown.Item>
             </NavDropdown>
-            <Link to="/DevTools" className='nav-link'>DevTools</Link>
+            
           </Nav>
+          {cart.length > 0 && <Nav className='ml-auto mr-5'><Link to="/Checkout" className='nav-link fade-in'>Checkout({cart.length}) <Image src={cartsvg} /></Link></Nav>}
         </Navbar.Collapse>
       </Container>
     </Navbar>

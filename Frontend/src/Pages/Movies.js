@@ -24,7 +24,7 @@ const history = useHistory();
                             <Card.Title>{movie.title}</Card.Title>
                             <Card.Text>{movie.description}</Card.Text>
                             {theaterID>0 ? 
-                            <Button variant='success' onClick={() => {setMovieID(movie.id); redirect('/seat')} }>Select a seat</Button>
+                            <Button variant='success' onClick={() => {setMovieID(movie.id); redirect('/seat')} }>Select Seats</Button>
                                 :<Button variant="primary" onClick={() => {setMovieID(movie.id); redirect('/theaters')}} >Select a Theater</Button>
                             }
                         </Card.Body>

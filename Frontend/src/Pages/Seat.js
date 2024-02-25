@@ -3,13 +3,20 @@ import Loading from '../Components/Loading';
 import DisabledSVG from '../Components/DisabledSVG';
 import SeatRow from '../Components/SeatRow';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+
 
 function Seat({seats, setSeats, cart, setCart, isLoading, setCartTimer, timerRunning, setTimerRunning, movieID, theaterID, theaters, movies}) {
 
 
+useEffect(() => {
+  if(movieID === 0 || theaterID === 0) {
+    history.push('/');
+}
+},[] );
 
-
-
+const history = useHistory();
 
 
 
@@ -54,7 +61,6 @@ function Seat({seats, setSeats, cart, setCart, isLoading, setCartTimer, timerRun
    
    
 const isSeatInCart = (seat) => cart.some((cartSeat) => cartSeat.id === seat.id);
-// INFO we have added the grid of seats to the Seat component. We have also added the onClick event to the seats. We will use this to select the seats. We will also add the logic to select the seats in the next step.
 
 
   return (
@@ -89,7 +95,7 @@ const isSeatInCart = (seat) => cart.some((cartSeat) => cartSeat.id === seat.id);
 
       <Row>
         <h2 className='text-light'>
-        Showing seats for {movies[movieID - 1]?.title || 'your movie'} at {theaters[theaterID - 1]?.name || 'your theater'}
+        Showing seats for <strong>{movies[movieID - 1]?.title || 'your movie'}</strong> at <strong>{theaters[theaterID - 1]?.name || 'your theater'}</strong>
         </h2>
       </Row>
       <SeatRow row={rowA} isSeatInCart={isSeatInCart} handleSeatClick={handleSeatClick} isLoading={isLoading} Loading={Loading} movieID={movieID} theaterID={theaterID}/>
