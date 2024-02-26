@@ -4,11 +4,15 @@ import DisabledSVG from '../Components/DisabledSVG';
 import { useHistory } from 'react-router-dom';
 
 const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart, movieID, theaterID, movies, theaters}) => {
-useEffect(() => {
+
+  const history = useHistory();
+
+  useEffect(() => {
   if(cart.length < 1) {
     history.go(-1);
   }
-}, [cart]);
+}, [cart, history]);
+
   const finalPurchase = (e) => {
     setTimerRunning(false);
     e.preventDefault();
@@ -24,7 +28,7 @@ useEffect(() => {
     redirect('/success');
   };
 
-  const history = useHistory();
+  
   
   const redirect = (path) =>{ 
     

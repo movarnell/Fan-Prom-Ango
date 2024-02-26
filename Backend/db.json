@@ -191,7 +191,7 @@
           {
             "movieName": "Shawshank Redemption",
             "movieId": "2",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 5.99,
             "disabled": false
           },
@@ -626,7 +626,7 @@
           {
             "movieName": "Shawshank Redemption",
             "movieId": "2",
-            "seatAvailable": true,
+            "seatAvailable": false,
             "seatPrice": 5.99,
             "disabled": false
           },
