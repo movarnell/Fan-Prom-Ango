@@ -42,7 +42,7 @@ app.put('/seats/:id', (req, res) => {
     return res.status(404).json({ message: 'Seat not found' });
   }
   Object.assign(seat, req.body);
-
+  console.log('Seat updated - ID:', id);
   // Write updated data back to db.json
   fs.writeFileSync('seats.json', JSON.stringify(seats, null, 2));
   res.json(seat);
@@ -51,7 +51,7 @@ app.put('/seats/:id', (req, res) => {
 app.put('/theaters/', (req, res) => {
   const theater = req.body;
   theaters.push(theater);
-
+  console.log('Theater added - ID:', theater.id);
   // Write updated data back to theaters.json
   fs.writeFileSync('theaters.json', JSON.stringify(theaters, null, 2));
   res.json(theater);
@@ -60,10 +60,28 @@ app.put('/theaters/', (req, res) => {
 app.put('/movies/', (req, res) => {
   const movie = req.body;
   movies.push(movie);
-
+  console.log('Movie added - ID:', movie.id);
   // Write updated data back to movies.json
   fs.writeFileSync('movies.json', JSON.stringify(movies, null, 2));
   res.json(movie);
+});
+
+app.delete('/theaters/:id', (req, res) => {
+  const { id } = req.params;
+  theaters = theaters.filter((t) => t.id !== id);
+  console.log('Theater removed - ID:', id);
+  // Write updated data back to theaters.json
+  fs.writeFileSync('theaters.json', JSON.stringify(theaters, null, 2));
+  res.json({ message: 'Theater removed' });
+});
+
+app.delete('/movies/:id', (req, res) => {
+  const { id } = req.params;
+  movies = movies.filter((m) => m.id !== id);
+  console.log('Movie removed - ID:', id);
+  // Write updated data back to movies.json
+  fs.writeFileSync('movies.json', JSON.stringify(movies, null, 2));
+  res.json({ message: 'Movie removed' });
 });
 
 

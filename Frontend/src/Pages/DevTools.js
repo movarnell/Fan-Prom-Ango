@@ -8,6 +8,8 @@ const DevTools = ({seats, updateSeats, setIsLoading, isLoading}) => {
     const [userInput2, setUserInput2] = useState('');
     const [userInput3, setUserInput3] = useState('');
    
+
+    const url = 'http://localhost:3001';
    
 
     const makeSeatsAvailable = () => {
@@ -89,6 +91,50 @@ const DevTools = ({seats, updateSeats, setIsLoading, isLoading}) => {
         });
         
     };
+
+const addTheater = async (name, address) => {
+    setIsLoading(true);
+
+    seats.forEach((seat) => {
+        //set all seats available for new theater
+        const moviesForNewTheater = seat.theaters[0].movies.map((movie) => { return { ...movie, seatAvailable: true } });
+
+        seat.theaters.push({
+            
+            theaterId: seats[0].theaters.length,
+            movies: moviesForNewTheater,
+        });
+        updateSeats(seat);
+    });
+    const response = await fetch(`${url}/theaters`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            name: name,
+            location: address,
+            id: seats[0].theaters.length,
+        }),
+    });
+    const data = await response.json();
+    //set all seats available for new theater
+    
+    console.log(data);
+}
+
+const removeTheater = async (theaterid) => {
+    setIsLoading(true);
+    seats.forEach((seat) => {
+        seat.theaters = seat.theaters.filter((theater) => theater.theaterId !== theaterid);
+        updateSeats(seat);
+    });
+    const response = await fetch(`${url}/theaters/${theaterid}`, {
+        method: 'DELETE',
+    });
+    const data = await response.json();
+    console.log(data);
+}
 
 
 return (
@@ -239,7 +285,40 @@ return (
             </Card>
         </Col>
         <Col>
-        
+            <Card className='bg-light mb-3'>
+                <Card.Body>
+                    <Card.Title >Add Theater</Card.Title>
+                    <Card.Text>Add a new theater to the database</Card.Text>
+                    <Form>
+                        <Form.Group className='mb-3'>
+                            <Form.Label>Theater Name</Form.Label>
+                            <Form.Control type='text' value={userInput1} onChange={(e) => setUserInput1(e.target.value)} placeholder='Promineo Cinemas' />
+                        </Form.Group>
+                        <Form.Group className='mb-3'>
+                            <Form.Label>Theater Address</Form.Label>
+                            <Form.Control type='text' value={userInput2} onChange={(e) => setUserInput2(e.target.value)} placeholder='123 Blank St., Kansas City, KS' />
+                        </Form.Group>
+                        <Button variant='primary' onClick={() => addTheater(userInput1, userInput2)}>Add Theater</Button>
+                    </Form>
+                </Card.Body>
+            </Card>
+        </Col>
+    </Row>
+    <Row>
+        <Col>
+            <Card className='bg-light mb-3'>
+                <Card.Body>
+                    <Card.Title >Remove Theater</Card.Title>
+                    <Card.Text>Remove a theater from the database</Card.Text>
+                    <Form>
+                        <Form.Group className='mb-3'>
+                            <Form.Label>Theater ID</Form.Label>
+                            <Form.Control type='text' value={userInput1} onChange={(e) => setUserInput1(e.target.value)} placeholder='Theater ID' />
+                        </Form.Group>
+                        <Button variant='primary' onClick={() => removeTheater(userInput1)}>Remove Theater</Button>
+                    </Form>
+                </Card.Body>
+            </Card>
         </Col>
     </Row>
     </Container>   
