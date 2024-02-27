@@ -100,3 +100,7 @@ body{
     height: auto;
     border-radius: 5px;
 }
+
+.bg-transparent {
+    background-color: rgba(145, 143, 143, 0.473)
+}
