@@ -7,7 +7,7 @@ const DevTools = ({seats, updateSeats, setIsLoading, isLoading}) => {
     const [userInput1, setUserInput1] = useState('');
     const [userInput2, setUserInput2] = useState('');
     const [userInput3, setUserInput3] = useState('');
-   
+    const [userInput4, setUserInput4] = useState('');
 
     const url = 'http://localhost:3001';
    
@@ -134,6 +134,35 @@ const removeTheater = async (theaterid) => {
     });
     const data = await response.json();
     console.log(data);
+}
+
+const addMovie = async (title, description, imageurl, price) => {
+    setIsLoading(true);
+    seats.forEach((seat) => {
+        seat.theaters.forEach((theater) => {
+            theater.movies.push({
+                movieId: theater.movies.length,
+                seatPrice: parseFloat(price),
+                seatAvailable: true,
+                disabled: false,
+            });
+        });
+
+
+        updateSeats(seat);
+    });
+    const response = await fetch(`${url}/movies`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            title: title,
+            description: description,
+            image: imageurl,
+            id: seats[0].theaters[0].movies.length,
+        }),
+    });
 }
 
 
@@ -284,6 +313,8 @@ return (
                 </Card.Body>
             </Card>
         </Col>
+        </Row>
+    <Row>
         <Col>
             <Card className='bg-light mb-3'>
                 <Card.Body>
@@ -316,6 +347,51 @@ return (
                             <Form.Control type='text' value={userInput1} onChange={(e) => setUserInput1(e.target.value)} placeholder='Theater ID' />
                         </Form.Group>
                         <Button variant='primary' onClick={() => removeTheater(userInput1)}>Remove Theater</Button>
+                    </Form>
+                </Card.Body>
+            </Card>
+        </Col>
+        <Col>
+            <Card className='bg-light mb-3'>
+                <Card.Body>
+                    <Card.Title >Remove Movie</Card.Title>
+                    <Card.Text>Remove a movie from the database</Card.Text>
+                    <Form>
+                        <Form.Group className='mb-3'>
+                            <Form.Label>Movie ID</Form.Label>
+                            <Form.Control type='text' value={userInput1} onChange={(e) => setUserInput1(e.target.value)} placeholder='Movie ID' />
+                        </Form.Group>
+                        <Button variant='primary' onClick={() => removeTheater(userInput1)}>Remove Movie</Button>
+                    </Form>
+                </Card.Body>
+            </Card>
+        </Col>
+    </Row>
+
+    <Row>
+        <Col>
+            <Card className='bg-light mb-3'>
+                <Card.Body>
+                    <Card.Title >Add Movie</Card.Title>
+                    <Card.Text>Add a new movie to the database</Card.Text>
+                    <Form>
+                        <Form.Group className='mb-3'>
+                            <Form.Label>Movie Title</Form.Label>
+                            <Form.Control type='text' value={userInput1} onChange={(e) => setUserInput1(e.target.value)} placeholder='Movie Title' />
+                        </Form.Group>
+                        <Form.Group className='mb-3'>
+                            <Form.Label>Movie Description</Form.Label>
+                            <Form.Control type='text' value={userInput2} onChange={(e) => setUserInput2(e.target.value)} placeholder='Movie Description' />
+                        </Form.Group>
+                        <Form.Group className='mb-3'>
+                            <Form.Label>Image URL</Form.Label>
+                            <Form.Control type='text' value={userInput3} onChange={(e) => setUserInput3(e.target.value)} placeholder='Image URL' />
+                        </Form.Group>
+                        <Form.Group className='mb-3'>
+                            <Form.Label>Price</Form.Label>
+                            <Form.Control type='text' value={userInput4} onChange={(e) => setUserInput4(e.target.value)} placeholder='Price' />
+                        </Form.Group>
+                        <Button variant='primary' onClick={() => addMovie(userInput1, userInput2, userInput3, userInput4)}>Add Movie</Button>
                     </Form>
                 </Card.Body>
             </Card>
