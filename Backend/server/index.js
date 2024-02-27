@@ -7,7 +7,9 @@ app.use(cors());
 app.use(express.json());
 
 // Read data from db.json
-let seats = JSON.parse(fs.readFileSync('db.json', 'utf8'));
+let seats = JSON.parse(fs.readFileSync('seats.json', 'utf8'));
+let theaters = JSON.parse(fs.readFileSync('theaters.json', 'utf8'));
+let movies = JSON.parse(fs.readFileSync('movies.json', 'utf8'));
 
 app.get('/seats', (req, res) => {
   if (!seats.length) {
@@ -15,6 +17,22 @@ app.get('/seats', (req, res) => {
   }
   res.json(seats);
   console.log('sent seats to client');
+});
+
+app.get('/theaters', (req, res) => {
+  if (!theaters.length) {
+    return res.json({ message: 'No theaters available' });
+  }
+  res.json(theaters);
+  console.log('sent theaters to client');
+});
+
+app.get('/movies', (req, res) => {
+  if (!movies.length) {
+    return res.json({ message: 'No movies available' });
+  }
+  res.json(movies);
+  console.log('sent movies to client');
 });
 
 app.put('/seats/:id', (req, res) => {
@@ -26,10 +44,28 @@ app.put('/seats/:id', (req, res) => {
   Object.assign(seat, req.body);
 
   // Write updated data back to db.json
-  fs.writeFileSync('db.json', JSON.stringify(seats, null, 2));
-  console.log('Updated availability for seat: '  + seat.id + ' to ' + seat.seatAvailable);
+  fs.writeFileSync('seats.json', JSON.stringify(seats, null, 2));
   res.json(seat);
 });
+
+app.put('/theaters/', (req, res) => {
+  const theater = req.body;
+  theaters.push(theater);
+
+  // Write updated data back to theaters.json
+  fs.writeFileSync('theaters.json', JSON.stringify(theaters, null, 2));
+  res.json(theater);
+});
+
+app.put('/movies/', (req, res) => {
+  const movie = req.body;
+  movies.push(movie);
+
+  // Write updated data back to movies.json
+  fs.writeFileSync('movies.json', JSON.stringify(movies, null, 2));
+  res.json(movie);
+});
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

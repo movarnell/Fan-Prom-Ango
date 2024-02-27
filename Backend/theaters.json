@@ -1,0 +1,5 @@
+[
+    { "name": "Promineo Cinema", "location": "123 ACDC St., Thundertown, WI", "id": "1"},
+    { "name": "Local Hometown Theater", "location": "87 Hamilton Row, Potatoville, ID", "id": "2" },
+    { "name": "Awesome Stage", "location": "32 Cool St., AwesomeVille, OH", "id": "3" }
+]

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { Container, Row, Col, Card } from 'react-bootstrap'
+import React, { useEffect } from 'react'
+import { Row, Card } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom';
 const PurchaseSuccess = () => {
-
+const history = useHistory();
     useEffect(() => {
         
         const timer = setTimeout(() => {
@@ -10,8 +10,8 @@ const PurchaseSuccess = () => {
         }, 10000);
         return () => clearTimeout(timer);
     }
-    , []);
-const history = useHistory();
+    , [history]);
+
     return (
         
             <Row>
