@@ -2,26 +2,30 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import cartsvg from "../Assets/CartLight.svg";
 import Logo from "../Assets/logo.png";
 import { Link } from 'react-router-dom';
-function Navigation() {
+import { Image } from "react-bootstrap";
+
+function Navigation({ cart }) {
   return (
     <Navbar sticky='top' expand='lg' className='bg-dark' data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href='/'><img src={Logo} alt="Fan-Prom-Ango logo" width="40px" height="auto"></img></Navbar.Brand>
+        <Link to='/' className='navbar navbar-brand'><img src={Logo} alt="Fan-Prom-Ango logo" width="40px" height="auto"></img></Link>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='me-auto'>
             <Link to="/" className='nav-link'>Home</Link>
-            <Link to="/DevTools" className='nav-link'>DevTools</Link>
+            
             <NavDropdown title='Movies' id='basic-nav-dropdown'>
               <NavDropdown.Item href='/Movies'>Browse Movies</NavDropdown.Item>
-              <NavDropdown.Item href='#action/3.2'>
-                Another action
+              <NavDropdown.Item href='/Theaters'>
+                Browse Theaters
               </NavDropdown.Item>
-              <NavDropdown.Item href='#action/3.3'>Something</NavDropdown.Item>
             </NavDropdown>
+            
           </Nav>
+          {cart.length > 0 && <Nav className='ml-auto mr-5'><Link to="/Checkout" className='nav-link fade-in'>Checkout({cart.length}) <Image src={cartsvg} /></Link></Nav>}
         </Navbar.Collapse>
       </Container>
     </Navbar>

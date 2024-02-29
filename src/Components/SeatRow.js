@@ -1,8 +1,9 @@
 import React from 'react';
+import { Row } from 'react-bootstrap';
 
-function SeatRow({ row, isSeatInCart, handleSeatClick, isLoading, Loading }) {
+function SeatRow({ row, isSeatInCart, handleSeatClick, isLoading, Loading, movieID, theaterID}) {
   return (
-    <div className='row'>
+    <Row className='row mt-2'>
       <h2 className='text-light'>Row {row[0]?.seatDescription?.charAt(0)||''}</h2>
       {isLoading ? <Loading/> : row.map((seat) => (
         <div
@@ -10,9 +11,9 @@ function SeatRow({ row, isSeatInCart, handleSeatClick, isLoading, Loading }) {
           className={
             isSeatInCart(seat)
               ? "seat seat-in-cart col-2 m-2"
-              : !seat.seatAvailable
+              : !seat?.theaters[theaterID - 1]?.movies[movieID - 1]?.seatAvailable
                 ? "seat seat-taken col-2 m-2"
-                : seat.disabled
+                : seat?.theaters[theaterID - 1]?.movies[movieID - 1]?.disabled
                   ? "seat seat-disabled col-2 m-2"
                   : "seat seat-available col-2 m-2"
           }
@@ -21,7 +22,7 @@ function SeatRow({ row, isSeatInCart, handleSeatClick, isLoading, Loading }) {
           {seat.seatDescription}
         </div>
       ))}
-    </div>
+    </Row>
   );
 }
 

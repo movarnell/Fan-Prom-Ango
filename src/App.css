@@ -2,8 +2,20 @@ body{
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    background-color: #0000008c;
 }
+.fade-in{
+    animation: fadeIn 0.5s ease-in-out;
 
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 .seat {
     transform-style: preserve-3d;
@@ -87,4 +99,8 @@ body{
     width: 100%;
     height: auto;
     border-radius: 5px;
+}
+
+.bg-transparent {
+    background-color: rgba(145, 143, 143, 0.473)
 }
