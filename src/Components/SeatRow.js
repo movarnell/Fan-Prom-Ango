@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Row } from 'react-bootstrap';
+import {TheaterContext} from './context/theaterContext';
 
 function SeatRow({ row, isSeatInCart, handleSeatClick, isLoading, Loading, movieID, theaterID}) {
+  const {movies} = useContext(TheaterContext);
+  console.log(`Seat Row: `, movies)
+  
   return (
     <Row className='row mt-2'>
       <h2 className='text-light'>Row {row[0]?.seatDescription?.charAt(0)||''}</h2>
