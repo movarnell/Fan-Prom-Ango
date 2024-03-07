@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Carousel, Button, Image } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom'
+import { DataContext } from '../Components/context/datacontext'
 
-const Movies = ({ theaterID, setMovieID, movies, theaters }) => {
+const Movies = () => {
+    const { movies, theaters, theaterID, setMovieID } = useContext(DataContext)
+
     const history = useHistory()
     const redirect = (path) => {
         history.push(path)

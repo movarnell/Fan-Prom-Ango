@@ -3,11 +3,13 @@ import Loading from '../Components/Loading';
 import DisabledSVG from '../Components/DisabledSVG';
 import SeatRow from '../Components/SeatRow';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+import { DataContext } from '../Components/context/datacontext';
 
+function Seat({seats, setSeats, cart, setCart, isLoading, setCartTimer, timerRunning, setTimerRunning}) {
+const {movies, theaters, movieID, theaterID} = useContext(DataContext)
 
-function Seat({seats, setSeats, cart, setCart, isLoading, setCartTimer, timerRunning, setTimerRunning, movieID, theaterID, theaters, movies}) {
 
 const history = useHistory();
 useEffect(() => {

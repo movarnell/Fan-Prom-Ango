@@ -1,9 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Button, Container, Row, Col, ListGroup, Form } from 'react-bootstrap';
 import DisabledSVG from '../Components/DisabledSVG';
 import { useHistory } from 'react-router-dom';
+import { DataContext } from '../Components/context/datacontext';
 
-const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart, movieID, theaterID, movies, theaters}) => {
+const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart}) => {
+  
+  const { movies, theaters, movieID, theaterID } = useContext(DataContext);
+  
 
   const history = useHistory();
 
