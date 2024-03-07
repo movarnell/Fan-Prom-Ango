@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Button, ListGroup } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom'
+import { DataContext } from '../Components/context/datacontext'
 
-const Theaters = ({movieID, setTheaterID, theaters, movies}) => {
+const Theaters = () => {
     
+    const {theaters, movies, setTheaterID, movieID} = useContext(DataContext);
+
     const history = useHistory();
     const redirect = (path) =>{ 
         history.push(path);

@@ -7,12 +7,19 @@ const PurchaseSuccess = () => {
   const history = useHistory();
 
   useEffect(() => {
-    setInterval(() => {
-      setRedirectTimer(redirectTimer - 1);
-      if (redirectTimer === 0) {
-        history.push("/");
-      }
-    }, 1000);
+      const intervalId = setInterval(() => {
+        setRedirectTimer((prevTimer) => prevTimer - 1);
+      }, 1000);
+
+      return () => {
+        clearInterval(intervalId);
+      };
+    }, []);
+
+  useEffect(() => {
+    if (redirectTimer === 0) {
+      history.push("/");
+    }
   }, [redirectTimer, history]);
 
   return (

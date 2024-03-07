@@ -6,8 +6,11 @@ import cartsvg from "../Assets/CartLight.svg";
 import Logo from "../Assets/logo.png";
 import { Link } from 'react-router-dom';
 import { Image } from "react-bootstrap";
+import { useContext } from "react";
+import { CartContext } from "./context/cartcontext";
 
-function Navigation({ cart }) {
+function Navigation() {
+  const cart = useContext(CartContext).cart;
   return (
     <Navbar sticky='top' expand='lg' className='bg-dark' data-bs-theme="dark">
       <Container>
