@@ -1,7 +1,13 @@
 import React from 'react'
 import { DataContext } from './context/datacontext'
+import { CartContext } from './context/cartcontext'
 import { useState } from 'react'
+import { useEffect } from 'react'
+import CartTimer from './CartTimer'
 const ContextWrapper = ({children}) => {
+
+    
+
     const [movies, setMovies] = useState([
         {
           title: "Avatar",
@@ -48,15 +54,37 @@ const ContextWrapper = ({children}) => {
       const [movieID, setMovieID] = useState(0);
   const [theaterID, setTheaterID] = useState(0);
 
+  const [cartTimer, setCartTimer] = useState(0);
+  const [timerRunning, setTimerRunning] = useState(false);
+  const [cart, setCart] = useState([]);
+  useEffect(() => {
+    const timerLogic = () => {
+      if (timerRunning) {
+        setCartTimer((prev) => prev + 1);
+        console.log("line 18 set" + cartTimer);
+      }
+      if (cartTimer === 300) {
+        setTimerRunning(false);
+        setCart([]);
+        setCartTimer(0);
+      }
+    };
 
+    const timerInterval = setInterval(timerLogic, 1000);
+
+    return () => clearInterval(timerInterval); // this will clear the interval when the component unmounts
+  }, [cartTimer, timerRunning, setCart, setCartTimer, setTimerRunning]);
 
   return (
     
 
     <div>
-       <DataContext.Provider value={{movies, setMovies, theaters, movieID, setMovieID, theaterID, setTheaterID}}>
-        {children}
-        </DataContext.Provider>
+        <CartContext.Provider value={{cart, setCart, cartTimer, setCartTimer, timerRunning, setTimerRunning}}>
+            <DataContext.Provider value={{movies, setMovies, theaters, movieID, setMovieID, theaterID, setTheaterID}}>
+            {timerRunning && <CartTimer timer={cartTimer} />}
+                {children}
+            </DataContext.Provider>
+        </CartContext.Provider>
     </div>
   )
 }

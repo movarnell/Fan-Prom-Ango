@@ -2,7 +2,6 @@ import "./App.css";
 import Header from "./Components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./Components/Navigation";
-import CartTimer from "./Components/CartTimer";
 import { useEffect, useState } from "react";
 import Seat from "./Pages/Seat";
 import DevTools from "./Pages/DevTools";
@@ -18,10 +17,8 @@ import ContextWrapper from "./Components/ContextWrapper";
 
 function App() {
   const [seats, setSeats] = useState([]);
-  const [cart, setCart] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [cartTimer, setCartTimer] = useState(0);
-  const [timerRunning, setTimerRunning] = useState(false);
+  
   
   const URL = "https://august-now-406001.wm.r.appspot.com/seats";
 
@@ -30,23 +27,7 @@ function App() {
     getSeats();
   }, []);
 
-  useEffect(() => {
-    const timerLogic = () => {
-      if (timerRunning) {
-        setCartTimer((prev) => prev + 1);
-        console.log("line 18 set" + cartTimer);
-      }
-      if (cartTimer === 300) {
-        setTimerRunning(false);
-        setCart([]);
-        setCartTimer(0);
-      }
-    };
-
-    const timerInterval = setInterval(timerLogic, 1000);
-
-    return () => clearInterval(timerInterval); // this will clear the interval when the component unmounts
-  }, [cartTimer, timerRunning, setCart, setCartTimer, setTimerRunning]); // dependencies of the useEffect hook
+   // dependencies of the useEffect hook
 
   const getSeats = async () => {
     setIsLoading(true);
@@ -77,9 +58,8 @@ function App() {
     <ContextWrapper>
       <Router>
         <Container fluid className="bg-dark min-vh-100">
-          <Navigation cart={cart} />
+          <Navigation/>
           <Header />
-          {timerRunning && <CartTimer timer={cartTimer} />}
           <div className="container">
             <Switch>
               <Route exact path="/" render={() => <Home />} />
@@ -98,13 +78,8 @@ function App() {
                 path="/checkout"
                 render={() => (
                   <Checkout
-                    cart={cart}
-                    setCart={setCart}
                     isLoading={isLoading}
-                    setIsLoading={setIsLoading}
-                    cartTimer={cartTimer}
-                    setCartTimer={setCartTimer}
-                    setTimerRunning={setTimerRunning}
+                    setIsLoading={setIsLoading}                   
                     updateSeats={updateSeats}
                   />
                 )}
@@ -115,12 +90,8 @@ function App() {
                   <Seat
                     seats={seats}
                     setSeats={setSeats}
-                    cart={cart}
-                    setCart={setCart}
                     isLoading={isLoading}
-                    setCartTimer={setCartTimer}
-                    timerRunning={timerRunning}
-                    setTimerRunning={setTimerRunning}
+
                   />
                 )}
               />
