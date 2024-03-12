@@ -1,5 +1,5 @@
 [
-    { "name": "Promineo Cinema", "location": "123 ACDC St., Thundertown, WI", "id": "1"},
-    { "name": "Local Hometown Theater", "location": "87 Hamilton Row, Potatoville, ID", "id": "2" },
-    { "name": "Awesome Stage", "location": "32 Cool St., AwesomeVille, OH", "id": "3" }
+    { "id": "1", "name": "Promineo Cinema", "location": "123 ACDC St., Thundertown, WI", "showtimes": [{ "id": "1"}] },
+    { "id": "2", "name": "Cinemark", "location": "456 7th St., Anytown, WI", "showtimes": [{ "id": "2"}] },
+    { "id": "3", "name": "AMC", "location": "789 Elm St., Nowheresville, WI", "showtimes": [{ "id": "3"}]}
 ]

@@ -1,9 +1,20 @@
 import React, { useEffect } from 'react';
 import { Button, Container, Row, Col, ListGroup, Form } from 'react-bootstrap';
 import DisabledSVG from '../Components/DisabledSVG';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
+import { useContext } from 'react';
+import { DataContext } from '../Components/context/datacontext';
+import { CartContext } from '../Components/context/cartcontext';
 
-const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart, movieID, theaterID, movies, theaters}) => {
+const Checkout = () => {
+  const { showtimes, updateSeat, movies, theaters, } = useContext(DataContext);
+  const { cart, setCart, setTimerRunning, setCartTimer } = useContext(CartContext);
+  const { movieID , theaterID, showtimeID } = useParams();
+
+  console.log('cart', cart);
+  console.table(showtimes);
+  console.log('showtimeID', showtimeID);
+
 
   const history = useHistory();
 
@@ -13,6 +24,8 @@ const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart, m
   }
 }, [cart, history]);
 
+
+ 
   const finalPurchase = (e) => {
     setTimerRunning(false);
     e.preventDefault();
@@ -20,8 +33,8 @@ const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart, m
       alert("Please select a seat");
     } else if (cart.length > 0) {
       cart.forEach((seat) => {
-        seat.theaters[theaterID - 1].movies[movieID - 1].seatAvailable = false;
-        updateSeats(seat);
+        seat.seatAvailable = false;
+        updateSeat(seat, showtimeID);
       });
       setCart([]);
     }
@@ -47,9 +60,18 @@ const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart, m
               <ListGroup.Item key={index+'cart'}>
                 <Row>
                   <Col sm={8}>
-                    <span><strong>Seat {seat.seatDescription} </strong>{seat.theaters[theaterID - 1].movies[movieID - 1].disabled && [<DisabledSVG/>, <br/>, '(Handicap Accessible)']}</span>
+                    <span>
+                      <strong>Seat {seat.seatDescription} </strong>
+                      {showtimes[showtimeID - 1]?.accessibleSeats?.includes(seat.id) && (
+                        <>
+                          <DisabledSVG />
+                          <br />
+                          (Handicap Accessible)
+                        </>
+                      )}
+                    </span>
                     <br />
-                    <span>Price: ${seat.theaters[theaterID - 1].movies[movieID - 1].seatPrice.toFixed(2)}</span>
+                    <span>Price: ${showtimes[showtimeID - 1]?.price}</span>
                   </Col>
                   <Col sm={4}>
                     {cart.length > 1 ?
@@ -62,7 +84,7 @@ const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart, m
                       setCart(newCart);
                       setTimerRunning(false);
                       setCartTimer(0);
-                      redirect('/seat');
+                      redirect('/seat/'+movieID+'/'+theaterID+'/'+showtimeID);
                       
                     }}>Remove</Button>}
                   </Col>
@@ -72,7 +94,7 @@ const Checkout = ({ cart, setTimerRunning, setCartTimer, updateSeats, setCart, m
           </ListGroup>
           <Row className="my-3">
             <Col>
-              <h4>Total: ${cart.reduce((acc, seat) => acc + seat.theaters[theaterID - 1].movies[movieID - 1].seatPrice, 0).toFixed(2)}</h4>
+              <h4>Total: ${cart.reduce((acc, seat) => acc + showtimes[showtimeID - 1]?.price, 0).toFixed(2)}</h4>
             </Col>
           </Row>
         </Col>

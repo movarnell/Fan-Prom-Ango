@@ -14,12 +14,12 @@ const Home = () => {
                         <Col md="auto" className='px-5 py-5'>
                             <h2>Now Showing</h2>
                             <p>Discover the latest movies and classics.</p>
-                            <Button variant="primary" href="/movies">Browse Movies</Button>
+                            <Button variant="primary" href="/movies/0">Browse Movies</Button>
                         </Col>
                         <Col md="auto" className='px-5 py-5'>
                             <h2>Choose a Theater</h2>
                             <p>Find the perfect theater for your movie experience.</p>
-                            <Button variant="primary" href="/theaters">Choose a Theater</Button>
+                            <Button variant="primary" href="/theaters/0">Choose a Theater</Button>
                         </Col>
                     </Row>
                 </Container>
