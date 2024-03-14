@@ -25,3 +25,26 @@ export const updateSeat = async (seat, id) => {
     });
     return response.json();
     }
+
+
+export const addShowtime = async (showtime) => {
+    const response = await fetch(`${url}/showtimes`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(showtime)
+    });
+    return response.json();
+    }
+
+export const addMovie = async (movie) => {
+    const response = await fetch(`${url}/movies`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(movie)
+    });
+    return response.json();
+    }

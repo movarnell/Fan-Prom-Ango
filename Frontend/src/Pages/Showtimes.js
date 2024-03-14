@@ -36,7 +36,7 @@ const Showtimes = () => {
                   <strong>Seats Available: {showtime.seats.filter(seat => {return seat.seatAvailable === true}).length}</strong>
                 </Card.Text>
                 <Card.Text>
-                  <strong>Seats Accessible: {showtime.accessibleSeats.length}</strong>
+                  <strong>Handicap Accessible: {showtime.accessibleSeats.length}</strong>
                 </Card.Text>
                 </Col>
                 <Col>
