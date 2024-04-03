@@ -106,6 +106,7 @@ const isSeatInCart = (seat) => cart.some((cartSeat) => cartSeat.id === seat.id);
           </Link>
         }
       </Row>
+      <h3 className='text-center fw-bold text-light'>---Screen---</h3>
       <SeatRow row={rowA} isSeatInCart={isSeatInCart} handleSeatClick={handleSeatClick} isLoading={isLoading} Loading={Loading} movieID={movieID} theaterID={theaterID}/>
       <SeatRow row={rowB} isSeatInCart={isSeatInCart} handleSeatClick={handleSeatClick} isLoading={isLoading} Loading={Loading} movieID={movieID} theaterID={theaterID}/>
       <SeatRow row={rowC} isSeatInCart={isSeatInCart} handleSeatClick={handleSeatClick} isLoading={isLoading} Loading={Loading} movieID={movieID} theaterID={theaterID}/>
