@@ -14,11 +14,13 @@ import Movies from "./Pages/Movies";
 import Theaters from "./Pages/Theaters";
 import PurchaseSuccess from "./Pages/PurchaseSuccess";
 import ContextWrapper from "./Components/ContextWrapper";
+import MovieDB from "./Components/MovieDB";
 
 function App() {
   const [seats, setSeats] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  
+  const [movies, setMovies] = useState([]);
+  console.log(movies)
   
   const URL = "https://august-now-406001.wm.r.appspot.com/seats";
 
@@ -58,9 +60,10 @@ function App() {
     <ContextWrapper>
       <Router>
         <Container fluid className="bg-dark min-vh-100">
-          <Navigation/>
+          <Navigation />
           <Header />
           <div className="container">
+            <MovieDB movies={movies} setMovies={setMovies} />
             <Switch>
               <Route exact path="/" render={() => <Home />} />
               <Route
@@ -79,7 +82,7 @@ function App() {
                 render={() => (
                   <Checkout
                     isLoading={isLoading}
-                    setIsLoading={setIsLoading}                   
+                    setIsLoading={setIsLoading}
                     updateSeats={updateSeats}
                   />
                 )}
@@ -91,22 +94,11 @@ function App() {
                     seats={seats}
                     setSeats={setSeats}
                     isLoading={isLoading}
-
                   />
                 )}
               />
-              <Route
-                path="/movies"
-                render={() => (
-                  <Movies/>
-                )}
-              />
-              <Route
-                path="/theaters"
-                render={() => (
-                  <Theaters/>
-                )}
-              />
+              <Route path="/movies" render={() => <Movies />} />
+              <Route path="/theaters" render={() => <Theaters />} />
               <Route path="/success" render={() => <PurchaseSuccess />} />
             </Switch>
           </div>
@@ -114,7 +106,7 @@ function App() {
           <Footer />
         </Container>
       </Router>
-      </ContextWrapper>
+    </ContextWrapper>
   );
 }
 
