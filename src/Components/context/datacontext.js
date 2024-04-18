@@ -17,6 +17,9 @@ export const DataContext = createContext({
     theaterID: 0,
     setTheaterID: () => {},
 
+    showtimes: [],
+    setShowtimes: () => {}
+
     
 
 });

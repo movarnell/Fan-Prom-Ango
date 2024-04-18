@@ -19,7 +19,7 @@ import MovieDB from "./Components/MovieDB";
 function App() {
   const [seats, setSeats] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([])
   console.log(movies)
   
   const URL = "https://august-now-406001.wm.r.appspot.com/seats";
@@ -63,7 +63,7 @@ function App() {
           <Navigation />
           <Header />
           <div className="container">
-            <MovieDB movies={movies} setMovies={setMovies} />
+            {/* <MovieDB movies={movies} setMovies={setMovies} /> */}
             <Switch>
               <Route exact path="/" render={() => <Home />} />
               <Route

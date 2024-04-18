@@ -10,7 +10,7 @@ const Movies = () => {
   const redirect = (path) => {
     history.push(path);
   };
-
+const imagePrefix = "https://image.tmdb.org/t/p/w500";
   return (
     <>
       <h2 className="fade-in text-light">
@@ -21,7 +21,7 @@ const Movies = () => {
           <Carousel.Item key={index}>
             <Image
               className="rounded d-block w-100"
-              src={movie.image}
+              src={imagePrefix + movie.backdrop_path}
               alt={movie.title}
               style={{ height: "500px", objectFit: "cover" }}
             />
@@ -35,7 +35,7 @@ const Movies = () => {
               }}
             >
               <h3>{movie.title}</h3>
-              <p style={{ textOverflow: "ellipsis" }}>{movie.description}</p>
+              <p style={{ textOverflow: "ellipsis" }}>{movie.overview}</p>
               {theaterID > 0 ? (
                 <Button
                   variant="light"
