@@ -7,8 +7,8 @@ import CartTimer from "./CartTimer";
 const ContextWrapper = ({ children }) => {
   const [showTimes, setShowtimes] = useState([]);
   const [movies, setMovies] = useState([]);
-
-  const imagePrefix = "https://image.tmdb.org/t/p/w500";
+  const SHOWTIME_ENDPOINT =
+  "https://65bc1cf852189914b5bd9bf1.mockapi.io/showtimes";
 
   const getShowtimes = async () => {
     let response = await fetch(SHOWTIME_ENDPOINT);
@@ -20,10 +20,11 @@ const ContextWrapper = ({ children }) => {
   
 
   useEffect(() => {
-    getShowtimes();
+    
   }, []);
 
   useEffect(() => {
+    getShowtimes();
     getMovies();
   }, []);
 
@@ -108,7 +109,7 @@ const ContextWrapper = ({ children }) => {
             setMovieID,
             theaterID,
             setTheaterID,
-            showtimes,
+            showTimes,
             setShowtimes,
           }}
         >
