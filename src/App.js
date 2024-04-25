@@ -14,7 +14,7 @@ import Movies from "./Pages/Movies";
 import Theaters from "./Pages/Theaters";
 import PurchaseSuccess from "./Pages/PurchaseSuccess";
 import ContextWrapper from "./Components/ContextWrapper";
-import MovieDB from "./Components/MovieDB";
+//import MovieDB from "./Components/MovieDB";
 
 function App() {
   const [seats, setSeats] = useState([]);
