@@ -19,7 +19,7 @@ useEffect(() => {
 }
 },[history, movieID, theaterID] );
 
-
+//FIXME Here we need to be taking in the Theater ID and Movie ID from the context so that we can see the seatsSold Array for the specific movie and theater. 
 
 
 
